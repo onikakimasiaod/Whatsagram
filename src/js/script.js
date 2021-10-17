@@ -25,20 +25,26 @@ function toUpper() {
     document.getElementById('keyboardMinus').style.display="none";
     document.getElementById('keyboardMayus').style.display="block";
     document.getElementById('keyboardNum').style.display="none";
+    document.getElementById('keyboardSymb').style.display="none";
 }
 
 function toLower(){
     document.getElementById('keyboardMinus').style.display="block";
     document.getElementById('keyboardMayus').style.display="none";
     document.getElementById('keyboardNum').style.display="none";
+    document.getElementById('keyboardSymb').style.display="none";
 }
 
 function toNum(){
     document.getElementById('keyboardMinus').style.display="none";
     document.getElementById('keyboardMayus').style.display="none";
     document.getElementById('keyboardNum').style.display="block";
+    document.getElementById('keyboardSymb').style.display="none";
 }
 
-function toSymb(){
-
+function toSigns(){
+    document.getElementById('keyboardMinus').style.display="none";
+    document.getElementById('keyboardMayus').style.display="none";
+    document.getElementById('keyboardNum').style.display="none";
+    document.getElementById('keyboardSymb').style.display="block";
 }
