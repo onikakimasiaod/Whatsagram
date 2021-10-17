@@ -3,6 +3,15 @@
 
     }
 
+    #header{
+        background-color: darkgreen;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 50px;
+    }
+
     /*WHERE TYPING*/
     .message{
         display: flex;
@@ -61,15 +70,17 @@
     }
 
     /*SPECIAL CHARACTERS*/
-    .special:nth-child(1){
+
+    /*123*/
+    .special{
         margin-right: 2px;
     }
 
-    .special:nth-child(2){
+    .space{
         width: 100%;
     }
 
-    .special:nth-child(3){
+    .intro {
         margin-left: 2px;
     }
 
@@ -78,6 +89,18 @@
 
     }
 
+    #upper{
+        margin-right: 2px;
+    }
+
+    /*KEYBOARD MAYUS*/
+    #keyboardMayus {
+        display: none;
+    }
+
+    #keyboardNum {
+        display: none;
+    }
 
 
 }
