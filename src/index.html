@@ -9,18 +9,17 @@
     <link rel="stylesheet" media="screen and (min-width: 320px)" type="text/css" href="css/styles.css"/>
 
 </head>
-<body background="images/whatsapp-background.jpg">
+<body background="images/whatsapp-background.jpg" onload="fechaActual()">
 <div id="app">
-    <div id="header">
-
-    </div>
-    <div class="conversation">
-
-    </div>
+    <!--<div id="header"></div>-->
+    <div id="conversation"></div>
     <div class="message">
         <div id="containerText">
-            <div id="text" contenteditable="true"></div>
+            <input type="button" value="GIF" onclick="emoji()"/>
+            <textarea name="texto" cols="30" id="texto"></textarea>
+            <input type="button" value="▶" onclick="send()"/>
         </div>
+
         <div id="keyboardMinus">
             <div class="row">
                 <button class="keyboard" name="q" value="q">q</button>
@@ -47,7 +46,7 @@
                 <button class="keyboard" name="ñ" value="ñ">ñ</button>
             </div>
             <div class="row">
-                <button class="mayus" name="mayus" value="mayus">MAYÚS</button>
+                <button class="mayus" ondblclick="toUpper()">⬆</button>
                 <button class="keyboard" name="z" value="z">z</button>
                 <button class="keyboard" name="x" value="x">x</button>
                 <button class="keyboard" name="c" value="c">c</button>
@@ -55,12 +54,15 @@
                 <button class="keyboard" name="b" value="b">b</button>
                 <button class="keyboard" name="n" value="n">n</button>
                 <button class="keyboard" name="m" value="m">m</button>
-                <button class="delete" name="delete" value="delete">DEL</button>
+                <button class="delete" name="delete" onclick="deleteChar()">⬅</button>
             </div>
             <div class="row">
                 <button class="special" onclick="toNum()">123</button>
                 <button class="space" name="space" value=" ">Space</button>
-                <button class="intro" name="intro" value="<br>">intro</button>
+                <button class="delete" onclick="deleteAll()">C</button>
+                <button class="delete" onclick="deleteWord()">CE</button>
+                <button class="delete" onclick="deleteFirst()">➡</button>
+                <button class="intro" name="intro" onclick="line()">intro</button>
             </div>
 
         </div>
@@ -174,7 +176,7 @@
                 <button class="keyboard" value="·">·</button>
             </div>
             <div class="row">
-                <button onclick="toSymb()" name="symb">#+=</button>
+                <button onclick="toNum()" name="symb">#+=</button>
                 <button class="keyboard" name="." value=".">.</button>
                 <button class="keyboard" name="," value=",">,</button>
                 <button class="keyboard" name="?" value="?">?</button>
