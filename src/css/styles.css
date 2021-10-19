@@ -1,17 +1,297 @@
 /*TODO 1 MESSAGING AREA: DATA D'ENVIAMENT I L'HORA*/
 /*TODO 10 GRID MAIN LAYOUT*/
+@media only screen and (min-width: 600px){
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    .app-container{
+        background-image: url(../images/whatsapp-background.jpg);
+        width: 360px;
+        border-color: black;
+
+    }
+}
+
+/*TODO 16 MESSAGING AREA*/
+/*::-webkit-scrollbar{
+    display: none;
+}*/
+/*TODO 17 TEXT AREA*/
+
+/*TODO 18 KEYBOARD AREA*/
+
+
 /*TODO 11 DO THE KEYBOARD WITH FLEXBOX*/
 /*TODO 12 RESPONSIVE WITH CHROME: SAMSUNG S5*/
+body {
+        background-image: url(../images/whatsapp-background.jpg);
+        background-repeat: repeat;
+        background-size: cover;
+        font-family: Arial;
+    }
+
+    .app-container {
+        display: grid;
+        grid-template-rows: 60px 360px 50px 150px;
+        grid-template-areas:
+        "header"
+        "main"
+        "text"
+        "keyboard";
+    }
+
+    .app-header {
+        grid-area:header;
+        background-color: darkgreen;
+        margin-top: -8px;
+        margin-left: -8px;
+        margin-right: -8px;
+        display: flex;
+    }
+
+    .app-messagingArea {
+        grid-area: main;
+        display: grid;
+        overflow: scroll;
+        grid-template-columns: repeat(3,2fr);
+        grid-auto-rows: 30px;
+        grid-row-gap: 5px;
+        justify-items: flex-end;
+        /*align-content: flex-end;*/
+
+        margin: 5px;
+    }
+
+    /*grid-area: main;
+    display: grid;
+    overflow: scroll;
+    grid-template-columns: repeat(3,115px);
+grid-auto-rows: minmax(auto,30px);
+grid-row-gap: 5px;
+justify-items: flex-end;
+align-content: flex-end;*/
+
+    .app-textArea {
+        grid-area: text;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+
+    .app-textArea > textarea {
+        background-color: white;
+        box-sizing: border-box;
+        width: 80%;
+        margin: 5px 5px;
+        border: 1px solid;
+        border-radius: 6px;
+        align-self: center;
+        font-size: large;
+    }
+
+    .app-textArea > input[type="button"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2em;
+        background: #fafafa;
+        font-size: 14px;
+        border-radius: 0.3em;
+        border: 1px solid #444;
+        box-shadow: 0 0.2em 0 0.05em #222;
+        height: 42px;
+    }
+
+    .app-keyboardArea {
+        grid-area:keyboard;
+    }
+
+
 /*TODO 13 VISTA DESKTOP: CENTRAT HORIZONTALMENT*/
 /*TODO 14 KEYS WITH HOVER EFFECTS WHEN CLICKING*/
 
+/*TODO 15 KEYBOARD TO NONE*/
+/*KEYBOARDS*/
+#keyboardMayus {
+    display: none;
+}
 
+#keyboardNum {
+    display: none;
+}
+
+#keyboardSymb {
+    display: none;
+}
+
+.row{
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    height:30px;
+}
+
+.keyboard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    background: #fafafa;
+    float: left;
+    font-size: 14px;
+    border-radius: 0.3em;
+    border: 1px solid #444;
+    box-shadow: 0 0.2em 0 0.05em #222;
+    border-bottom-color: #555;
+}
+
+.space{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    float: left;
+    font-size: 14px;
+    border-radius: 0.3em;
+    border: 1px solid #444;
+    box-shadow: 0 0.2em 0 0.05em #222;
+    border-bottom-color: #555;
+}
+
+.special{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    float: left;
+    font-size: 14px;
+    border-radius: 0.3em;
+    border: 1px solid #444;
+    box-shadow: 0 0.2em 0 0.05em #222;
+    border-bottom-color: #555;
+}
+
+.delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    background: #fafafa;
+    float: left;
+    font-size: 14px;
+    border-radius: 0.3em;
+    border: 1px solid #444;
+    box-shadow: 0 0.2em 0 0.05em #222;
+    border-bottom-color: #555;
+}
+
+.intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    background: #fafafa;
+    float: left;
+    font-size: 14px;
+    border-radius: 0.3em;
+    border: 1px solid #444;
+    box-shadow: 0 0.2em 0 0.05em #222;
+    border-bottom-color: #555;
+}
+
+.mayus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    background: #fafafa;
+    float: left;
+    font-size: 14px;
+    border-radius: 0.3em;
+    border: 1px solid #444;
+    box-shadow: 0 0.2em 0 0.05em #222;
+    border-bottom-color: #555;
+}
+.convo{
+    display: flex;
+    background-color: darkseagreen;
+    justify-content: flex-end;
+    border-radius: 5px;
+    margin:10px;
+    font-size: large;
+}
+
+#fotogram{
+    height: 50px;
+    border-radius: 50px;
+    margin:10px;
+}
+
+.nomgram{
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+    font-size: large;
+    font-weight: bold;
+}
+
+#sub{
+    font-size: small;
+    font-weight: normal;
+}
+
+.message{
+    display: flex;
+    background-color: darkseagreen;
+    border-radius: 8px;
+    grid-column-start: 3;
+}
+
+.time{
+    align-self: self-end;
+    font-size: 10px;
+}
+
+.textContent{
+    font-size: 15px;
+    flex: auto;
+    display: flex;
+    align-self: center;
+    margin-left: 3px;
+}
+
+#date {
+    background-color: mediumaquamarine;
+    display: flex;
+    border-radius: 20px;
+    grid-column: 2/3;
+    font-size: smaller;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+
+}
+
+/*TEXT AREA*/
 
 /*
-width: 360px
-height: 640px */
+!*
 
-@media screen and (min-width: 360px) {
+#texto{
+    display: flex;
+    width: 200px;
+    height: 30px;
+    margin-top: 2px;
+    border: none;
+    outline: none;
+
+}
+width: 360px
+height: 640px *!
+
+ {
     #app {
         display: grid;
         grid-auto-columns: auto;
@@ -28,25 +308,12 @@ height: 640px */
         align-content: center;
     }
 
-    .convo{
-        display: flex;
-        background-color: darkseagreen;
-        border-radius: 5px;
-        margin:5px;
-    }
 
-/*    #header{
-        grid-area: a;
-        background-color: darkgreen;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 50px;
-        margin-bottom: 2px;
-    }*/
+!*    #header{
 
-    /*WHERE TYPING*/
+    }*!
+
+    !*WHERE TYPING*!
     .message{
         display: flex;
         flex-direction: column;
@@ -57,28 +324,10 @@ height: 640px */
     }
 
 
-    /*MESSAGE CONTAINER*/
-    #containerText {
-        display: flex;
-        background-color: white;
-        justify-content: space-evenly;
-        width: 340px;
-        height: 40px;
-        box-sizing: border-box;
-        margin: 5px 5px;
-        border: 1px solid;
-        border-radius: 21px;
-    }
+    !*MESSAGE CONTAINER*!
 
-    #texto{
-        display: flex;
-        width: 200px;
-        height: 30px;
-        margin-top: 2px;
-        border: none;
-        outline: none;
 
-    }
+
 
     #containerText > input[type="button"]{
         display: block;
@@ -89,58 +338,32 @@ height: 640px */
     }
 
     #containerText > input[type="button"]:hover{
-        background-color: gray; /* Green */
+        background-color: gray; !* Green *!
         color: white;
     }
 
     #sendMsg{
     }
 
-    /*KEYBOARD*/
+    !*KEYBOARD*!
 
     #keyboard{
 
     }
 
-    .row{
-        display: flex;
-        width: 100%;
-        height: 30px;
-        justify-content: space-evenly;
-        margin-bottom: 2px;
-    }
-
-    .keyboard{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 2em;
-    }
 
 
 
-    /*SPECIAL CHARACTERS*/
 
-    /*123*/
+    !*SPECIAL CHARACTERS*!
 
-    .space{
-        width: 100%;
-    }
-
-    /*KEYBOARD MAYUS*/
-    #keyboardMayus {
-        display: none;
-    }
-
-    #keyboardNum {
-        display: none;
-    }
-
-    #keyboardSymb{
-        display: none;
-    }
+    !*123*!
 
 
-    /*MESSAGES*/
 
-}
+
+
+
+    !*MESSAGES*!
+
+}*/

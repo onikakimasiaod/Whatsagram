@@ -6,20 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <!-- Styles -->
-    <link rel="stylesheet" media="screen and (min-width: 320px)" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 360px)" type="text/css" href="css/styles.css"/>
 
 </head>
-<body background="images/whatsapp-background.jpg" onload="fechaActual()">
-<div id="app">
-    <!--<div id="header"></div>-->
-    <div id="conversation"></div>
-    <div class="message">
-        <div id="containerText">
-            <input type="button" value="GIF" onclick="emoji()"/>
-            <textarea name="texto" cols="30" id="texto"></textarea>
-            <input type="button" value="▶" onclick="send()"/>
+<body onload="fechaActual()">
+<div class="app-container">
+    <div class="app-header">
+        <img src="images/foto_pers.png" id="fotogram">
+        <div class="nomgram">
+            <div>Kim Asiao<br></div>
+            <div id="sub">últ. vez hoy a la(s) 18:58</div>
         </div>
 
+    </div>
+    <div class="app-messagingArea">
+        <div id="date"></div>
+        <div class="message">
+            <p class="textContent">Hola</p>
+            <p class="time">19:20</p>
+        </div>
+    </div>
+    <div class="app-textArea">
+        <!--<div id="containerText">-->
+            <input type="button" value="GIF" onclick="emoji()"/>
+            <textarea name="texto" cols="100" id="texto"></textarea>
+            <input type="button" value="▶" onclick="send()"/>
+        <!--</div>-->
+    </div>
+    <div class="app-keyboardArea">
         <div id="keyboardMinus">
             <div class="row">
                 <button class="keyboard" name="q" value="q">q</button>
@@ -62,7 +76,7 @@
                 <button class="delete" onclick="deleteAll()">C</button>
                 <button class="delete" onclick="deleteWord()">CE</button>
                 <button class="delete" onclick="deleteFirst()">➡</button>
-                <button class="intro" name="intro" onclick="line()">intro</button>
+                <button class="intro" name="intro" onclick="line()">⤵</button>
             </div>
 
         </div>
@@ -105,7 +119,10 @@
             <div class="row">
                 <button class="special" onclick="toNum()">123</button>
                 <button class="space" name="space" value=" ">Space</button>
-                <button class="intro" name="intro" value="<br>">INTRO</button>
+                <button class="delete" onclick="deleteAll()">C</button>
+                <button class="delete" onclick="deleteWord()">CE</button>
+                <button class="delete" onclick="deleteFirst()">➡</button>
+                <button class="intro" name="intro" onclick="line()">⤵</button>
             </div>
         </div>
         <div id="keyboardNum">
@@ -134,7 +151,7 @@
                 <button class="keyboard" value="&#34;">"</button>
             </div>
             <div class="row">
-                <button onclick="toSigns()" name="symb">#+=</button>
+                <button class="special" onclick="toSigns()" name="symb">#+=</button>
                 <button class="keyboard" name="." value=".">.</button>
                 <button class="keyboard" name="," value=",">,</button>
                 <button class="keyboard" name="?" value="?">?</button>
@@ -145,9 +162,12 @@
                 <button class="delete" name="delete" value="delete">DEL</button>
             </div>
             <div class="row">
-                <button onclick="toLower()" class="special" name="ABC">ABC</button>
+                <button class="special" onclick="toNum()">123</button>
                 <button class="space" name="space" value=" ">Space</button>
-                <button class="intro" name="intro" value="<br>">INTRO</button>
+                <button class="delete" onclick="deleteAll()">C</button>
+                <button class="delete" onclick="deleteWord()">CE</button>
+                <button class="delete" onclick="deleteFirst()">➡</button>
+                <button class="intro" name="intro" onclick="line()">⤵</button>
             </div>
         </div>
         <div id="keyboardSymb">
@@ -176,7 +196,7 @@
                 <button class="keyboard" value="·">·</button>
             </div>
             <div class="row">
-                <button onclick="toNum()" name="symb">#+=</button>
+                <button class="special" onclick="toNum()" name="symb">#+=</button>
                 <button class="keyboard" name="." value=".">.</button>
                 <button class="keyboard" name="," value=",">,</button>
                 <button class="keyboard" name="?" value="?">?</button>
@@ -188,8 +208,12 @@
             </div>
             <div class="row">
                 <button onclick="toLower()" class="special" name="ABC">ABC</button>
-                <button class="space" name="space" value=" ">Space</button>
-                <button class="intro" name="intro" value="<br>">INTRO</button>
+                    <button class="space" name="space" value=" ">Space</button>
+                    <button class="delete" onclick="deleteAll()">C</button>
+                    <button class="delete" onclick="deleteWord()">CE</button>
+                    <button class="delete" onclick="deleteFirst()">➡</button>
+                    <button class="intro" name="intro" onclick="line()">⤵</button>
+                </div>
             </div>
         </div>
     </div>
