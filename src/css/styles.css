@@ -1,37 +1,52 @@
-/*TODO 1 MESSAGING AREA: DATA D'ENVIAMENT I L'HORA*/
-/*TODO 10 GRID MAIN LAYOUT*/
-@media only screen and (min-width: 600px){
+/*TODO 1 MESSAGING AREA: DATA D'ENVIAMENT I L'HORA ✅*/
+/*TODO 10 GRID MAIN LAYOUT ✅*/
+
+@media only screen and (max-width: 1280px){
     body{
         display: flex;
         justify-content: center;
     }
-    .app-container{
-        background-image: url(../images/whatsapp-background.jpg);
-        width: 360px;
-        border-color: black;
 
+    .app-container {
+        display: grid;
+        grid-template-rows: 60px 300px 50px 150px;
+        grid-template-areas:
+        "header"
+        "main"
+        "text"
+        "keyboard";
+        width: 360px;
+    }
+
+    .app-messagingArea {
+        grid-area: main;
+        display: grid;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        grid-template-columns: repeat(3,2fr); /*repeat(3,auto)*/
+        grid-row-gap: 5px;
+        justify-items: flex-end;
+        align-content: start;
+        margin: 5px;
+        overflow-wrap: anywhere;
     }
 }
 
-/*TODO 16 MESSAGING AREA*/
+/*TODO 16 MESSAGING AREA ✅*/
 /*::-webkit-scrollbar{
     display: none;
 }*/
-/*TODO 17 TEXT AREA*/
+/*TODO 17 TEXT AREA ✅*/
 
-/*TODO 18 KEYBOARD AREA*/
+/*TODO 18 KEYBOARD AREA ✅*/
 
 
-/*TODO 11 DO THE KEYBOARD WITH FLEXBOX*/
-/*TODO 12 RESPONSIVE WITH CHROME: SAMSUNG S5*/
-body {
-        background-image: url(../images/whatsapp-background.jpg);
-        background-repeat: repeat;
-        background-size: cover;
-        font-family: Arial;
-    }
+/*TODO 11 DO THE KEYBOARD WITH FLEXBOX ✅*/
+/*TODO 12 RESPONSIVE WITH CHROME: SAMSUNG S5 ✅*/
 
     .app-container {
+        background-image: url(../images/whatsapp-background.jpg);
+        background-size: cover;
         display: grid;
         grid-template-rows: 60px 360px 50px 150px;
         grid-template-areas:
@@ -55,22 +70,12 @@ body {
         display: grid;
         overflow: scroll;
         grid-template-columns: repeat(3,2fr);
-        grid-auto-rows: 30px;
         grid-row-gap: 5px;
         justify-items: flex-end;
-        /*align-content: flex-end;*/
-
+        align-content: start;
         margin: 5px;
+        overflow-wrap: anywhere;
     }
-
-    /*grid-area: main;
-    display: grid;
-    overflow: scroll;
-    grid-template-columns: repeat(3,115px);
-grid-auto-rows: minmax(auto,30px);
-grid-row-gap: 5px;
-justify-items: flex-end;
-align-content: flex-end;*/
 
     .app-textArea {
         grid-area: text;
@@ -109,9 +114,10 @@ align-content: flex-end;*/
 
 
 /*TODO 13 VISTA DESKTOP: CENTRAT HORIZONTALMENT*/
+/*NO ENTENC PERQUÈ A NES HEIGHT HI HA UN SCROLL!*/
 /*TODO 14 KEYS WITH HOVER EFFECTS WHEN CLICKING*/
 
-/*TODO 15 KEYBOARD TO NONE*/
+/*TODO 15 KEYBOARD TO NONE ✅*/
 /*KEYBOARDS*/
 #keyboardMayus {
     display: none;
@@ -243,23 +249,40 @@ align-content: flex-end;*/
 }
 
 .message{
-    display: flex;
     background-color: darkseagreen;
-    border-radius: 8px;
     grid-column-start: 3;
+    /* align-self: self-end; */
+    border-top-left-radius: 12px 88px;
+    border-bottom-left-radius: 80px 31px;
+    border-bottom-right-radius: 6px 9px;
+    /*background-color: darkseagreen;
+    grid-column-start: 3;
+    align-self: self-end;
+    border-top-left-radius: 30px 35px;
+    border-bottom-left-radius: 30px 27px;
+    border-bottom-right-radius: 30px 9px;
+    margin-right: 10px;*/
 }
 
 .time{
-    align-self: self-end;
+    text-align-last: end;
     font-size: 10px;
+    margin-block: auto;
 }
 
 .textContent{
+    /*font-size: 15px;
+    flex: auto;
+    display: flex;
+    align-self: center;
+    margin-left: 3px;*/
     font-size: 15px;
     flex: auto;
     display: flex;
     align-self: center;
     margin-left: 3px;
+    /* margin: unset; */
+    margin-block: auto;
 }
 
 #date {
@@ -268,102 +291,9 @@ align-content: flex-end;*/
     border-radius: 20px;
     grid-column: 2/3;
     font-size: smaller;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     margin-top: 2px;
+    align-self: start;
 
 }
-
-/*TEXT AREA*/
-
-/*
-!*
-
-#texto{
-    display: flex;
-    width: 200px;
-    height: 30px;
-    margin-top: 2px;
-    border: none;
-    outline: none;
-
-}
-width: 360px
-height: 640px *!
-
- {
-    #app {
-        display: grid;
-        grid-auto-columns: auto;
-        justify-content: end;
-        grid-auto-rows: 50px;
-
-    }
-
-    .date{
-        display: grid;
-        grid-area:none;
-        background-color: lightblue;
-        border-radius: 1px;
-        align-content: center;
-    }
-
-
-!*    #header{
-
-    }*!
-
-    !*WHERE TYPING*!
-    .message{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: absolute;
-        bottom: 0;
-        padding-bottom: 5px;
-    }
-
-
-    !*MESSAGE CONTAINER*!
-
-
-
-
-    #containerText > input[type="button"]{
-        display: block;
-        background-color: white;
-        color: black;
-        border: none;
-        font-size: 10px;
-    }
-
-    #containerText > input[type="button"]:hover{
-        background-color: gray; !* Green *!
-        color: white;
-    }
-
-    #sendMsg{
-    }
-
-    !*KEYBOARD*!
-
-    #keyboard{
-
-    }
-
-
-
-
-
-    !*SPECIAL CHARACTERS*!
-
-    !*123*!
-
-
-
-
-
-
-    !*MESSAGES*!
-
-}*/
