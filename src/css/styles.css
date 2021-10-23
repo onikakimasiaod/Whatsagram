@@ -1,7 +1,7 @@
 /*TODO 1 MESSAGING AREA: DATA D'ENVIAMENT I L'HORA ✅*/
 /*TODO 10 GRID MAIN LAYOUT ✅*/
 
-@media only screen and (max-width: 1280px){
+@media only screen and (max-width: 1980px){
     body{
         display: flex;
         justify-content: center;
@@ -45,8 +45,9 @@
 /*TODO 12 RESPONSIVE WITH CHROME: SAMSUNG S5 ✅*/
 
     .app-container {
-        background-image: url(../images/whatsapp-background.jpg);
+        background-image: url(../images/background.png);
         background-size: cover;
+        background-repeat: repeat;
         display: grid;
         grid-template-rows: 60px 360px 50px 150px;
         grid-template-areas:
@@ -66,51 +67,52 @@
     }
 
     .app-messagingArea {
+        display: flex;
+        flex-direction: column;
+        min-width: 330px;
+        justify-self: self-end;
         grid-area: main;
-        display: grid;
+        /* display: grid; */
         overflow: scroll;
-        grid-template-columns: repeat(3,2fr);
-        grid-row-gap: 5px;
-        justify-items: flex-end;
-        align-content: start;
-        margin: 5px;
-        overflow-wrap: anywhere;
-    }
+        justify-items: center;
+}
 
-    .app-textArea {
-        grid-area: text;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 5px;
-    }
+.app-textArea {
+    grid-area: text;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    background-color: #efefef;
+}
 
-    .app-textArea > textarea {
-        background-color: white;
-        box-sizing: border-box;
-        width: 80%;
-        margin: 5px 5px;
-        border: 1px solid;
-        border-radius: 6px;
-        align-self: center;
-        font-size: large;
-    }
+.app-textArea > textarea {
+    background-color: white;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 5px 5px;
+    border: 1px solid;
+    border-radius: 6px;
+    align-self: center;
+    font-size: large;
+}
 
-    .app-textArea > input[type="button"] {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 2em;
-        background: #fafafa;
-        font-size: 14px;
-        border-radius: 0.3em;
-        border: 1px solid #444;
-        box-shadow: 0 0.2em 0 0.05em #222;
-        height: 42px;
-    }
+.app-textArea > input[type="button"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    background: #fafafa;
+    font-size: 14px;
+    border-radius: 0.3em;
+    border: 1px solid #444;
+    box-shadow: 0 0.2em 0 0.05em #222;
+    height: 42px;
+}
 
-    .app-keyboardArea {
-        grid-area:keyboard;
-    }
+.app-keyboardArea {
+    grid-area:keyboard;
+    background-color: #efefef;
+}
 
 
 /*TODO 13 VISTA DESKTOP: CENTRAT HORIZONTALMENT*/
@@ -128,6 +130,10 @@
 }
 
 #keyboardSymb {
+    display: none;
+}
+
+#keyboardGif{
     display: none;
 }
 
@@ -249,51 +255,54 @@
 }
 
 .message{
-    background-color: darkseagreen;
-    grid-column-start: 3;
-    /* align-self: self-end; */
-    border-top-left-radius: 12px 88px;
-    border-bottom-left-radius: 80px 31px;
-    border-bottom-right-radius: 6px 9px;
-    /*background-color: darkseagreen;
-    grid-column-start: 3;
+    background-color:  #dcfbc4;
+    /* max-width: max-content; */
+    min-width: 97px;
+    /* min-width: fit-content; */
+    /* grid-column-start: 3; */
     align-self: self-end;
-    border-top-left-radius: 30px 35px;
-    border-bottom-left-radius: 30px 27px;
-    border-bottom-right-radius: 30px 9px;
-    margin-right: 10px;*/
+    border-top-left-radius: 15px 20px;
+    border-bottom-left-radius: 15px 20px;
+    border-bottom-right-radius: 15px 20px;
 }
 
 .time{
     text-align-last: end;
     font-size: 10px;
-    margin-block: auto;
+    margin-right: 6px;
+    margin-bottom: 3px;
+    margin-top: inherit;
+    color:  #b2b2b5;
 }
 
 .textContent{
-    /*font-size: 15px;
-    flex: auto;
-    display: flex;
-    align-self: center;
-    margin-left: 3px;*/
     font-size: 15px;
     flex: auto;
     display: flex;
     align-self: center;
-    margin-left: 3px;
-    /* margin: unset; */
-    margin-block: auto;
+    margin-top: 6px;
+    margin-left: 9px;
+    margin-bottom: 1px;
+    margin-right: 10px;
 }
 
 #date {
-    background-color: mediumaquamarine;
-    display: flex;
-    border-radius: 20px;
-    grid-column: 2/3;
-    font-size: smaller;
-    /* justify-content: center; */
-    /* align-items: center; */
-    margin-top: 2px;
-    align-self: start;
+    background-color: #e4f4fc;
+    color: #575c64;
+    border-radius: 3px;
+    /* font-size: smaller; */
+    /* text-align-last: center; */
+    align-self: center;
 
+}
+
+.otro{
+    background-color: #efefef;
+    max-width: max-content;
+    min-width: fit-content;
+    /* grid-column-start: 3; */
+    border-top-left-radius: 1px 20px;
+    border-bottom-left-radius: 15px 20px;
+    border-top-right-radius: 15px 20px;
+    border-bottom-right-radius: 15px 20px;
 }

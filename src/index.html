@@ -9,7 +9,7 @@
     <link rel="stylesheet" media="screen and (min-width: 360px)" type="text/css" href="css/styles.css"/>
 
 </head>
-<body onload="fechaActual()">
+<body onload="fechaActual(); firstMsg();">
 <div class="app-container">
     <div class="app-header">
         <img src="images/foto_pers.png" id="fotogram">
@@ -19,17 +19,12 @@
         </div>
 
     </div>
-
     <div class="app-messagingArea">
         <div id="date"></div>
-        <div class="message">
-            <p>Hola <br> que tal?</p>
-            <p></p>
-        </div>
     </div>
     <div class="app-textArea">
         <!--<div id="containerText">-->
-            <input type="button" value="GIF" onclick="emoji()"/>
+            <input type="button" value="😀" onclick="gif()"/>
             <textarea name="texto" cols="100" id="texto"></textarea>
             <input type="button" value="▶" onclick="send()"/>
         <!--</div>-->
@@ -61,7 +56,7 @@
                 <button class="keyboard" name="ñ" value="ñ">ñ</button>
             </div>
             <div class="row">
-                <button class="mayus" onclick="toUpper()">⬆</button>
+                <button class="mayus" name="mayus">⬆</button>
                 <button class="keyboard" name="z" value="z">z</button>
                 <button class="keyboard" name="x" value="x">x</button>
                 <button class="keyboard" name="c" value="c">c</button>
@@ -107,7 +102,7 @@
                 <button class="keyboard" name="ñ" value="Ñ">Ñ</button>
             </div>
             <div class="row">
-                <button class="mayus" onclick="toLower()">⬆</button>
+                <button class="minus" onclick="toLower()">⬆</button>
                 <button class="keyboard" name="z" value="Z">Z</button>
                 <button class="keyboard" name="x" value="X">X</button>
                 <button class="keyboard" name="c" value="C">C</button>
@@ -216,6 +211,51 @@
                     <button class="intro" name="intro" onclick="line()">⤵</button>
                 </div>
             </div>
+        <div id="keyboardGif">
+            <div class="row">
+                <button class="keyboard" value="😊">😊</button>
+                <button class="keyboard" value="😂">😂</button>
+                <button class="keyboard" value="🤣">🤣</button>
+                <button class="keyboard" value="😒">😒</button>
+                <button class="keyboard" value="😘">😘</button>
+                <button class="keyboard" value="😄">😄</button>
+                <button class="keyboard" value="😎">😎</button>
+                <button class="keyboard" value="😉">😉</button>
+                <button class="keyboard" value="😋">😋</button>
+                <button class="keyboard" value="😍">😋</button>
+            </div>
+            <div class="row">
+                <button class="keyboard" value="😘">😘</button>
+                <button class="keyboard" value="😛">😛</button>
+                <button class="keyboard" value="😌">😌</button>
+                <button class="keyboard" value="😴">😴</button>
+                <button class="keyboard" value="🥱">🥱</button>
+                <button class="keyboard" value="😫">😫</button>
+                <button class="keyboard" value="😪">😪</button>
+                <button class="keyboard" value="😯">😯</button>
+                <button class="keyboard" value="🤐">🤐</button>
+                <button class="keyboard" value="😐">😐</button>
+            </div>
+            <div class="row">
+                <button class="keyboard" value="😑">😑</button>
+                <button class="keyboard" value="🥰">🥰</button>
+                <button class="keyboard" value="😗">😗</button>
+                <button class="keyboard" value="😙">😙</button>
+                <button class="keyboard" value="😚">😚</button>
+                <button class="keyboard" value="🙂">🙂</button>
+                <button class="keyboard" value="🤗">🤗</button>
+                <button class="keyboard" value="🤩">🤩</button>
+                <button class="delete" name="delete" onclick="deleteChar()">⬅</button>
+            </div>
+            <div class="row">
+                <button onclick="toLower()" class="special" name="ABC">ABC</button>
+                <button class="space" name="space" value=" ">Space</button>
+                <button class="delete" onclick="deleteAll()">C</button>
+                <button class="delete" onclick="deleteWord()">CE</button>
+                <button class="delete" onclick="deleteFirst()">➡</button>
+                <button class="intro" name="intro" onclick="line()">⤵</button>
+            </div>
+        </div>
         </div>
     </div>
 </div>
