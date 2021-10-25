@@ -1,7 +1,7 @@
 /*TODO 1 MESSAGING AREA: DATA D'ENVIAMENT I L'HORA ✅*/
 /*TODO 10 GRID MAIN LAYOUT ✅*/
 
-@media only screen and (max-width: 1980px){
+@media only screen and (min-width: 400px){
     body{
         display: flex;
         justify-content: center;
@@ -9,7 +9,7 @@
 
     .app-container {
         display: grid;
-        grid-template-rows: 60px 300px 50px 150px;
+        grid-template-rows: 60px 100px 50px 150px;
         grid-template-areas:
         "header"
         "main"
@@ -44,6 +44,10 @@
 /*TODO 11 DO THE KEYBOARD WITH FLEXBOX ✅*/
 /*TODO 12 RESPONSIVE WITH CHROME: SAMSUNG S5 ✅*/
 
+    *{
+        font-family: 'Nunito', sans-serif;
+
+    }
     .app-container {
         background-image: url(../images/background.png);
         background-size: cover;
@@ -73,7 +77,7 @@
         justify-self: self-end;
         grid-area: main;
         /* display: grid; */
-        overflow: scroll;
+        overflow-y: scroll;
         justify-items: center;
 }
 
@@ -81,32 +85,36 @@
     grid-area: text;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5px;
     background-color: #efefef;
+    margin-top: 12px;
 }
 
 .app-textArea > textarea {
     background-color: white;
     box-sizing: border-box;
     width: 80%;
-    margin: 5px 5px;
+    margin: 2px 8px;
     border: 1px solid;
     border-radius: 6px;
-    align-self: center;
+    /* align-self: center; */
     font-size: large;
+    height: 30px;
+}
+
+#gif2Keyboard{
+    display: none;
 }
 
 .app-textArea > input[type="button"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2em;
     background: #fafafa;
     font-size: 14px;
     border-radius: 0.3em;
     border: 1px solid #444;
     box-shadow: 0 0.2em 0 0.05em #222;
-    height: 42px;
+    height: 30px;
 }
 
 .app-keyboardArea {
@@ -144,7 +152,7 @@
     height:30px;
 }
 
-.keyboard{
+.keyboard, .minus{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -156,6 +164,15 @@
     border: 1px solid #444;
     box-shadow: 0 0.2em 0 0.05em #222;
     border-bottom-color: #555;
+}
+
+.keyboard:hover{
+    background-color: #C5C6D0;
+}
+
+.keyboard:active {
+    box-shadow: 0 5px black;
+    transform: translateY(1px);
 }
 
 .space{
@@ -276,7 +293,7 @@
 }
 
 .textContent{
-    font-size: 15px;
+    font-size: 18px;
     flex: auto;
     display: flex;
     align-self: center;

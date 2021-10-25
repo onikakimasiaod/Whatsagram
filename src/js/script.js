@@ -22,19 +22,9 @@ function deleteFirst() {
 /*TODO 2 TEXT AREA: LLETRES ✅*/
 //KEYBOARD CODE
 
-let keyboard = document.querySelectorAll('.keyboard');
-keyboard.forEach(letter => {
-    letter.addEventListener('click', event => {
-        document.getElementById("texto").innerHTML += letter.value;
-        if (estado == 1){
-            toLower();
 
-        }
-        else if(estado == 2){
-            toUpperPerm();
-        }
-    })
-});
+
+
 
 //FOR SPECIAL CHARACTERS
 let special = document.querySelectorAll('.special');
@@ -62,9 +52,9 @@ function line() {
 //KEYBOARD TO MINUS TO
 /*TODO 7 MAJUSCULES DESACTIVAT/ 1 CARACTER EN MAJUSCULA / MAJUSCULES PERMANENTS */
 //dbl click and onclick
-let button = document.querySelectorAll('.mayus');
+var button = document.querySelectorAll('.mayus');
 let timer;
-let estado; //MINUSCULAS
+var estado; //MINUSCULAS
 button.forEach(but => {
     but.addEventListener('click', event => {
         let keyboard = document.querySelectorAll('.keyboard');
@@ -89,6 +79,39 @@ function toUpperPerm() {
     document.getElementById('keyboardNum').style.display = "none";
     document.getElementById('keyboardSymb').style.display = "none";
     document.getElementById('keyboardGif').style.display = "none";
+}
+
+
+
+let keyboard = document.querySelectorAll('.keyboard');
+keyboard.forEach(letter => {
+    letter.addEventListener('click', event => {
+
+        document.getElementById("texto").innerHTML += letter.value;
+        let typing = document.getElementById("texto");
+        typing.scrollTop = typing.scrollHeight;
+
+
+        if (estado == 1){
+            toLower();
+
+        }
+        else if(estado == 2){
+            toUpperPerm();
+        }
+    })
+});
+
+//TODO ARREGLAR EL TEXT AREA AL TECLEAR Y CLICKEO
+function toKeyboard(){
+    document.getElementById('keyboardMinus').style.display = "block";
+    document.getElementById('keyboardMayus').style.display = "none";
+    document.getElementById('keyboardNum').style.display = "none";
+    document.getElementById('keyboardSymb').style.display = "none";
+    document.getElementById('keyboardGif').style.display = "none";
+    document.getElementById('keyboard2Gif').style.display = "block";
+    document.getElementById('gif2Keyboard').style.display = "none";
+
 }
 function toLower() {
     document.getElementById('keyboardMinus').style.display = "block";
@@ -118,6 +141,8 @@ function gif() {
     document.getElementById('keyboardNum').style.display = "none";
     document.getElementById('keyboardSymb').style.display = "none";
     document.getElementById('keyboardGif').style.display = "block";
+    document.getElementById('keyboard2Gif').style.display = "none";
+    document.getElementById('gif2Keyboard').style.display = "block";
 }
 
 /*TODO 3 SEND BUTTON ✅*/
@@ -130,8 +155,7 @@ function send() {
     let clase = document.createAttribute("class");
     clase.value = "message";
     myDiv.setAttributeNode(clase);
-    //añado el div
-    document.getElementsByClassName("app-messagingArea")[0].appendChild(myDiv);
+
 
     //añadimos las p's
     //primera p con textContent
@@ -141,40 +165,48 @@ function send() {
     p1.setAttributeNode(classP1);
 
     //ya hemos creado <p class="textContent"></p>
-    //a continuacion creamos el texto
+    //a continuacion creamos el text
     let content = document.getElementById("texto").innerHTML
-    //TODO ARREGLAR LA LINEA NUEVA!!!!! (ARREGLADO PERO UNA CACA)
-    while (content.includes("\n")) {
-        content = content.replace("\n", "<br>");
+    if (content != ""){
+        //añado el div
+        document.getElementsByClassName("app-messagingArea")[0].appendChild(myDiv);
+        //TODO ARREGLAR LA LINEA NUEVA!!!!! (ARREGLADO PERO UNA CACA)
+        while (content.includes("\n")) {
+            content = content.replace("\n", "<br>");
+        }
+        let message = document.createTextNode(content);
+        p1.appendChild(message); //mensaje hecho <p class="textContent">MESSAGE</p>
+
+        let divsNum = document.querySelectorAll('.message').length;
+        let pContent = document.querySelectorAll('.textContent').length;
+        //myDiv.appendChild(p1);
+        document.getElementsByClassName("message")[divsNum - 1].appendChild(p1);
+        document.getElementsByClassName("textContent")[pContent].innerHTML = content;
+
+
+        //segunda p con time
+        let p2 = document.createElement("p");
+        let classP2 = document.createAttribute("class");
+        classP2.value = "time";
+        p2.setAttributeNode(classP2);
+
+        //ya hemos creado <p class="time"></p>
+        //a continuacion creamos el texto
+        let hourMinutes = document.createTextNode(hour);
+        p2.appendChild(hourMinutes); //mensaje hecho <p class="time">hourMinutes</p>
+
+
+        //a continuación, añadimos la p dentro del div
+
+        document.getElementsByClassName("message")[divsNum - 1].appendChild(p2);
+        /*document.getElementsByClassName("message")[divsNum].appendChild(p2);*/
+
+        document.getElementById("texto").innerHTML = "";
+        let myMsg = document.getElementsByClassName("app-messagingArea")[0];
+        myMsg.scrollTop = myMsg.scrollHeight;
     }
-    let message = document.createTextNode(content);
-    p1.appendChild(message); //mensaje hecho <p class="textContent">MESSAGE</p>
-
-    let divsNum = document.querySelectorAll('.message').length;
-    let pContent = document.querySelectorAll('.textContent').length;
-    //myDiv.appendChild(p1);
-    document.getElementsByClassName("message")[divsNum - 1].appendChild(p1);
-    document.getElementsByClassName("textContent")[pContent].innerHTML = content;
 
 
-    //segunda p con time
-    let p2 = document.createElement("p");
-    let classP2 = document.createAttribute("class");
-    classP2.value = "time";
-    p2.setAttributeNode(classP2);
-
-    //ya hemos creado <p class="time"></p>
-    //a continuacion creamos el texto
-    let hourMinutes = document.createTextNode(hour);
-    p2.appendChild(hourMinutes); //mensaje hecho <p class="time">hourMinutes</p>
-
-
-    //a continuación, añadimos la p dentro del div
-
-    document.getElementsByClassName("message")[divsNum - 1].appendChild(p2);
-    /*document.getElementsByClassName("message")[divsNum].appendChild(p2);*/
-
-    document.getElementById("texto").innerHTML = "";
 
 }
 
@@ -192,6 +224,9 @@ function fechaActual() {
 /*TODO 19 FORMATO DE LA HORA ✅*/
 
 function firstMsg() {
+    toUpperPerm();
+    estado = 1;
+
     let today = new Date();
     let hour = ("0" + today.getHours()).slice(-2) + ':' + ("0" + today.getMinutes()).slice(-2);
     //message with class without hour
@@ -234,6 +269,7 @@ function firstMsg() {
     //a continuación, añadimos la p dentro del div
 
     document.getElementsByClassName("otro")[divsNum - 1].appendChild(p2);
-    /*document.getElementsByClassName("message")[divsNum].appendChild(p2);*/
-
+    return estado;
 }
+
+//TODO En clicar sobre GIF, se mostren els emojis (mínim de 3)  i  la icona “GIF” se canvia per la icona d’un teclat. ✅
