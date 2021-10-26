@@ -1,38 +1,38 @@
-*{
-        font-family: 'Nunito', sans-serif;
-        margin:0;
-    }
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+}
 
 
-    .app-container {
-        background-image: url(../images/background.png);
-        background-size: cover;
-        background-repeat: repeat;
-        display: grid;
-        grid-template-rows: 60px 360px 50px 150px;
-        grid-template-areas:
+.app-container {
+    background-image: url(../images/background.png);
+    background-size: cover;
+    background-repeat: repeat;
+    display: grid;
+    grid-template-rows: 60px 360px 50px 150px;
+    grid-template-areas:
         "header"
         "main"
         "text"
         "keyboard";
-    }
+}
 
-    .app-header {
-        grid-area:header;
-        background-color: #01634C;
-        margin-top: -8px;
-        display: flex;
-    }
+.app-header {
+    grid-area: header;
+    background-color: #01634C;
+    margin-top: -8px;
+    display: flex;
+}
 
-    .app-messagingArea {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-self: self-end;
-        grid-area: main;
-        /* display: grid; */
-        overflow-y: scroll;
-        justify-items: center;
+.app-messagingArea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-self: self-end;
+    grid-area: main;
+    /* display: grid; */
+    overflow-y: scroll;
+    justify-items: center;
 }
 
 .app-textArea {
@@ -40,7 +40,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #efefef;
-    margin-top: 18px;
+    margin-top: 12px;
 }
 
 .app-textArea > textarea {
@@ -53,30 +53,33 @@
     /* align-self: center; */
     font-size: large;
     height: 30px;
-    margin-top: 4px;
+    margin-top: 8px;
     border-radius: 30px;
     overflow: hidden;
 }
 
 
-#gif2Keyboard{
+#gif2Keyboard {
     display: none;
 }
 
 .app-textArea > input[type="button"] {
     display: flex;
-    align-items: center;
-    font-size: 20px;
-    height: 30px;
-    margin: 3px;
+    font-size: 25px;
+    align-self: self-end;
     border: none;
-
 }
 
+.app-textArea > input[type="button"]:hover{
+    background-color: darkgray;
+}
+
+
 .app-keyboardArea {
-    grid-area:keyboard;
+    grid-area: keyboard;
     background-color: #efefef;
     padding: 8px;
+    margin-bottom: -20px;
 }
 
 
@@ -93,18 +96,18 @@
     display: none;
 }
 
-#keyboardGif{
+#keyboardGif {
     display: none;
 }
 
-.row{
+.row {
     display: flex;
     margin-bottom: 10px;
     justify-content: space-between;
-    height:30px;
+    height: 30px;
 }
 
-.keyboard, .minus{
+.keyboard, .minus {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,7 +121,7 @@
     border-bottom-color: #555;
 }
 
-.keyboard:hover{
+.keyboard:hover {
     background-color: #C5C6D0;
 }
 
@@ -127,7 +130,7 @@
     transform: translateY(1px);
 }
 
-.space{
+.space {
     width: 50%;
     display: flex;
     align-items: center;
@@ -141,7 +144,7 @@
     border-bottom-color: #555;
 }
 
-.special{
+.special {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,7 +171,7 @@
     border-bottom-color: #555;
 }
 
-.intro{
+.intro {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,7 +185,7 @@
     border-bottom-color: #555;
 }
 
-.mayus{
+.mayus {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -195,37 +198,39 @@
     box-shadow: 0 0.2em 0 0.05em #222;
     border-bottom-color: #555;
 }
-.convo{
+
+.convo {
     display: flex;
     background-color: darkseagreen;
     justify-content: flex-end;
     border-radius: 5px;
-    margin:10px;
+    margin: 10px;
     font-size: large;
 }
 
-#fotogram{
+#fotogram {
     height: 50px;
     border-radius: 50px;
-    margin:12px;
+    margin: 12px;
 }
 
-.nomgram{
+.nomgram {
     display: flex;
     flex-direction: column;
-    align-self:center;
+    align-self: center;
     font-size: large;
     font-weight: bold;
     margin-top: 7px;
+    color: cornsilk;
 }
 
-#sub{
+#sub {
     font-size: small;
     font-weight: normal;
 }
 
-.message{
-    background-color:  #dcfbc4;
+.message {
+    background-color: #dcfbc4;
     max-width: 90%;
     min-width: 90px;
     margin-top: 5px;
@@ -237,16 +242,16 @@
     margin-right: 5px;
 }
 
-.time{
+.time {
     text-align-last: end;
     font-size: 10px;
     margin-right: 6px;
     margin-bottom: 3px;
     margin-top: inherit;
-    color:  #b2b2b5;
+    color: #b2b2b5;
 }
 
-.textContent{
+.textContent {
     font-size: 18px;
     flex: auto;
     display: flex;
@@ -264,11 +269,11 @@
     /* font-size: smaller; */
     /* text-align-last: center; */
     align-self: center;
-    margin-top:auto;
+    margin-top: auto;
 
 }
 
-.otro{
+.otro {
     background-color: #efefef;
     max-width: max-content;
     min-width: fit-content;
@@ -279,16 +284,27 @@
     border-bottom-right-radius: 15px 20px;
 }
 
-.emojis{
+.emojis {
     border: none;
     font-size: medium;
 }
 
-.emojis:hover{
+.emojis:hover {
     background-color: #C5C6D0;
 }
 
-@media only screen and (max-width: 400px){
+.emoji{
+    border: none;
+    font-size: medium;
+    background-color: #b2b2b5;
+    height: 2em;
+}
+
+.emoji:hover {
+    background-color: whitesmoke;
+}
+
+@media only screen and (max-width: 400px) {
     .app-container {
         background-image: url(../images/background.png);
         background-size: cover;
@@ -303,8 +319,8 @@
     }
 }
 
-@media only screen and (min-width: 400px){
-    body{
+@media only screen and (min-width: 400px) {
+    body {
         display: flex;
         justify-content: center;
     }
@@ -333,11 +349,10 @@
         justify-items: center;
     }
 
-    .otro{
+    .otro {
         background-color: #efefef;
         max-width: max-content;
         min-width: fit-content;
         margin-top: 5px;
-        margin-left: 2px;
     }
 }

@@ -79,19 +79,22 @@ special.forEach(letter => {
 button.forEach(but => {
     but.addEventListener('click', event => {
         let keyboard = document.querySelectorAll('.keyboard');
-        if(event.detail===1){
-            timer = setTimeout(()=>{
+        if (event.detail === 1) {
+            timer = setTimeout(() => {
                 estado = 1;
-                toUpperPerm();},200)
+                toUpperPerm();
+            }, 200)
         }
-    })});
+    })
+});
 
 button.forEach(but => {
     but.addEventListener('dblclick', event => {
         clearTimeout(timer);
         estado = 2;
         toUpperPerm();
-    })});
+    })
+});
 
 /**
  * recorremos la variable declarada anteriormente llamada keyboard la cual almacena todos los botones
@@ -108,10 +111,9 @@ keyboard.forEach(letter => {
         // con esta instruccion, le decimos que el scroll vaya
         // bajando cada vez que se escribe en una nueva linea
         typing.scrollTop = typing.scrollHeight;
-        if (estado == 1){
+        if (estado == 1) {
             toLower();
-        }
-        else if(estado == 2){
+        } else if (estado == 2) {
             toUpperPerm();
         }
     })
@@ -126,6 +128,7 @@ keyboard.forEach(letter => {
 function deleteAll() {
     document.getElementById("texto").value = ""; //el text area sera completamente borrado
 }
+
 function deleteWord() {
     let msg = document.getElementById("texto").value.trim(); //borramos todos los espacios que puede haber en los lados
     let space = msg.lastIndexOf(" "); //buscamos el indice del ultimo espacio que haya dentro de la cadena
@@ -170,8 +173,8 @@ function send() {
     }
 
     //si el text area NO esta vacio, concateno todos los mensajes con el contenido del text area
-    if (message != ""){
-        document.getElementsByClassName("app-messagingArea")[0].innerHTML+=
+    if (message != "") {
+        document.getElementsByClassName("app-messagingArea")[0].innerHTML +=
             `<div class="message"><p class="textContent">${message}</p><p class="time">${hour}</p></div>`;
     }
 
@@ -184,7 +187,7 @@ function send() {
     //una vez que enviamos el mensaje, ponemos el teclado en mayuscula
     toUpperPerm();
     //y pasamos el estado a 1
-    return estado=1;
+    return estado = 1;
 }
 
 /**
@@ -204,12 +207,12 @@ function onLoad() {
 
     //guardamos la hora actual en la variable hour
     let hour = ("0" + today.getHours()).slice(-2) + ':' + ("0" + today.getMinutes()).slice(-2);
-    document.getElementsByClassName("app-messagingArea")[0].innerHTML+=
+    document.getElementsByClassName("app-messagingArea")[0].innerHTML +=
         `<div class="otro"><p class="textContent">Bienvenid@ a mi aplicacion</p><p class="time">${hour}</p></div>`;
 
 
     // Devolvemos el estado a 1
-    return estado =  1;
+    return estado = 1;
 }
 
 //TECLADOS
@@ -223,10 +226,11 @@ function toUpperPerm() {
     document.getElementById('keyboardSymb').style.display = "none";
     document.getElementById('keyboardGif').style.display = "none";
 }
+
 /**
  * function toKeyboard() --> teclado en minuscula y con el boton gif
  */
-function toKeyboard(){
+function toKeyboard() {
     document.getElementById('keyboardMinus').style.display = "block";
     document.getElementById('keyboardMayus').style.display = "none";
     document.getElementById('keyboardNum').style.display = "none";
@@ -235,6 +239,7 @@ function toKeyboard(){
     document.getElementById('keyboard2Gif').style.display = "block";
     document.getElementById('gif2Keyboard').style.display = "none";
 }
+
 /**
  * function toLower() --> teclado en minuscula
  */
@@ -246,6 +251,7 @@ function toLower() {
     document.getElementById('keyboardGif').style.display = "none";
     return estado = 0;
 }
+
 /**
  * function toNum() --> teclado numerico
  */
@@ -256,6 +262,7 @@ function toNum() {
     document.getElementById('keyboardSymb').style.display = "none";
     document.getElementById('keyboardGif').style.display = "none";
 }
+
 /**
  * function toSigns() --> teclado de caracteres especiales
  */
@@ -266,6 +273,7 @@ function toSigns() {
     document.getElementById('keyboardSymb').style.display = "block";
     document.getElementById('keyboardGif').style.display = "none";
 }
+
 /**
  * function toEmojis() --> teclado de emojis
  */
