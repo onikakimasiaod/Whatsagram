@@ -6,7 +6,7 @@
 
 .app-container {
     height: 640px;
-    width:360px;
+    width: 360px;
     background-image: url(../images/background.png);
     background-size: cover;
     background-repeat: repeat;
@@ -331,30 +331,12 @@
         background-size: cover;
         background-repeat: repeat;
         display: grid;
-        grid-template-rows: 60px 300px 50px 150px;
+        grid-template-rows: 60px 360px 50px 150px;
         grid-template-areas:
         "header"
         "main"
         "text"
         "keyboard";
         width: 360px;
-    }
-
-    .app-messagingArea {
-        display: flex;
-        flex-direction: column;
-        min-width: 350px;
-        justify-self: self-end;
-        grid-area: main;
-        /* display: grid; */
-        overflow-y: scroll;
-        justify-items: center;
-    }
-
-    .otro {
-        background-color: #efefef;
-        max-width: max-content;
-        min-width: fit-content;
-        margin-top: 5px;
     }
 }
