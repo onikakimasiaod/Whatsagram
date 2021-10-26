@@ -5,6 +5,8 @@
 
 
 .app-container {
+    height: 640px;
+    width:360px;
     background-image: url(../images/background.png);
     background-size: cover;
     background-repeat: repeat;
