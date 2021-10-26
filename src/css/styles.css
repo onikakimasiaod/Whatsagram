@@ -1,53 +1,9 @@
-/*TODO 1 MESSAGING AREA: DATA D'ENVIAMENT I L'HORA ✅*/
-/*TODO 10 GRID MAIN LAYOUT ✅*/
-
-@media only screen and (min-width: 400px){
-    body{
-        display: flex;
-        justify-content: center;
-    }
-
-    .app-container {
-        display: grid;
-        grid-template-rows: 60px 100px 50px 150px;
-        grid-template-areas:
-        "header"
-        "main"
-        "text"
-        "keyboard";
-        width: 360px;
-    }
-
-    .app-messagingArea {
-        grid-area: main;
-        display: grid;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        grid-template-columns: repeat(3,2fr); /*repeat(3,auto)*/
-        grid-row-gap: 5px;
-        justify-items: flex-end;
-        align-content: start;
-        margin: 5px;
-        overflow-wrap: anywhere;
-    }
-}
-
-/*TODO 16 MESSAGING AREA ✅*/
-/*::-webkit-scrollbar{
-    display: none;
-}*/
-/*TODO 17 TEXT AREA ✅*/
-
-/*TODO 18 KEYBOARD AREA ✅*/
-
-
-/*TODO 11 DO THE KEYBOARD WITH FLEXBOX ✅*/
-/*TODO 12 RESPONSIVE WITH CHROME: SAMSUNG S5 ✅*/
-
-    *{
+*{
         font-family: 'Nunito', sans-serif;
-
+        margin:0;
     }
+
+
     .app-container {
         background-image: url(../images/background.png);
         background-size: cover;
@@ -63,17 +19,15 @@
 
     .app-header {
         grid-area:header;
-        background-color: darkgreen;
+        background-color: #01634C;
         margin-top: -8px;
-        margin-left: -8px;
-        margin-right: -8px;
         display: flex;
     }
 
     .app-messagingArea {
         display: flex;
         flex-direction: column;
-        min-width: 330px;
+        width: 100%;
         justify-self: self-end;
         grid-area: main;
         /* display: grid; */
@@ -86,7 +40,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #efefef;
-    margin-top: 12px;
+    margin-top: 18px;
 }
 
 .app-textArea > textarea {
@@ -99,7 +53,11 @@
     /* align-self: center; */
     font-size: large;
     height: 30px;
+    margin-top: 4px;
+    border-radius: 30px;
+    overflow: hidden;
 }
+
 
 #gif2Keyboard{
     display: none;
@@ -108,26 +66,20 @@
 .app-textArea > input[type="button"] {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: #fafafa;
-    font-size: 14px;
-    border-radius: 0.3em;
-    border: 1px solid #444;
-    box-shadow: 0 0.2em 0 0.05em #222;
+    font-size: 20px;
     height: 30px;
+    margin: 3px;
+    border: none;
+
 }
 
 .app-keyboardArea {
     grid-area:keyboard;
     background-color: #efefef;
+    padding: 8px;
 }
 
 
-/*TODO 13 VISTA DESKTOP: CENTRAT HORIZONTALMENT*/
-/*NO ENTENC PERQUÈ A NES HEIGHT HI HA UN SCROLL!*/
-/*TODO 14 KEYS WITH HOVER EFFECTS WHEN CLICKING*/
-
-/*TODO 15 KEYBOARD TO NONE ✅*/
 /*KEYBOARDS*/
 #keyboardMayus {
     display: none;
@@ -255,7 +207,7 @@
 #fotogram{
     height: 50px;
     border-radius: 50px;
-    margin:10px;
+    margin:12px;
 }
 
 .nomgram{
@@ -264,6 +216,7 @@
     align-self:center;
     font-size: large;
     font-weight: bold;
+    margin-top: 7px;
 }
 
 #sub{
@@ -273,14 +226,15 @@
 
 .message{
     background-color:  #dcfbc4;
-    /* max-width: max-content; */
-    min-width: 97px;
-    /* min-width: fit-content; */
-    /* grid-column-start: 3; */
+    max-width: 90%;
+    min-width: 90px;
+    margin-top: 5px;
     align-self: self-end;
     border-top-left-radius: 15px 20px;
     border-bottom-left-radius: 15px 20px;
     border-bottom-right-radius: 15px 20px;
+    word-break: break-all;
+    margin-right: 5px;
 }
 
 .time{
@@ -310,6 +264,7 @@
     /* font-size: smaller; */
     /* text-align-last: center; */
     align-self: center;
+    margin-top:auto;
 
 }
 
@@ -317,9 +272,72 @@
     background-color: #efefef;
     max-width: max-content;
     min-width: fit-content;
-    /* grid-column-start: 3; */
+    margin: 5px;
     border-top-left-radius: 1px 20px;
     border-bottom-left-radius: 15px 20px;
     border-top-right-radius: 15px 20px;
     border-bottom-right-radius: 15px 20px;
+}
+
+.emojis{
+    border: none;
+    font-size: medium;
+}
+
+.emojis:hover{
+    background-color: #C5C6D0;
+}
+
+@media only screen and (max-width: 400px){
+    .app-container {
+        background-image: url(../images/background.png);
+        background-size: cover;
+        background-repeat: repeat;
+        display: grid;
+        grid-template-rows: 60px 360px 50px 150px;
+        grid-template-areas:
+        "header"
+        "main"
+        "text"
+        "keyboard";
+    }
+}
+
+@media only screen and (min-width: 400px){
+    body{
+        display: flex;
+        justify-content: center;
+    }
+
+    .app-container {
+        background-size: cover;
+        background-repeat: repeat;
+        display: grid;
+        grid-template-rows: 60px 300px 50px 150px;
+        grid-template-areas:
+        "header"
+        "main"
+        "text"
+        "keyboard";
+        width: 360px;
+    }
+
+    .app-messagingArea {
+        display: flex;
+        flex-direction: column;
+        min-width: 350px;
+        justify-self: self-end;
+        grid-area: main;
+        /* display: grid; */
+        overflow-y: scroll;
+        justify-items: center;
+    }
+
+    .otro{
+        background-color: #efefef;
+        max-width: max-content;
+        min-width: fit-content;
+        margin-top: 5px;
+        margin-left: 2px;
+    }
 }

@@ -12,10 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Roboto+Mono:ital,wght@0,100;0,200;1,100&display=swap" rel="stylesheet">
 
 </head>
-<body onload="fechaActual(); firstMsg();">
+<body onload="onLoad();">
 <div class="app-container">
     <div class="app-header">
-        <img src="images/foto_pers.png" id="fotogram">
+        <img src="images/foto_pers.jpg" id="fotogram">
         <div class="nomgram">
             <div>Kim Asiao<br></div>
             <div id="sub">últ. vez hoy a la(s) 18:58</div>
@@ -27,10 +27,10 @@
     </div>
     <div class="app-textArea">
         <!--<div id="containerText">-->
-            <input id="keyboard2Gif" type="button" value="😀" onclick="gif()"/>
+            <input id="keyboard2Gif" type="button" value="😀" onclick="toEmojis()"/>
             <input id="gif2Keyboard" type="button" value="⌨" onclick="toKeyboard()"/>
             <textarea name="texto" cols="100" id="texto"></textarea>
-            <input type="button" value="▶" onclick="send()"/>
+            <input type="button" onclick="send()" value="▶"/>
         <!--</div>-->
     </div>
     <div class="app-keyboardArea">
@@ -217,38 +217,38 @@
             </div>
         <div id="keyboardGif">
             <div class="row">
-                <button class="keyboard" value="😊">😊</button>
-                <button class="keyboard" value="😂">😂</button>
-                <button class="keyboard" value="🤣">🤣</button>
-                <button class="keyboard" value="😒">😒</button>
-                <button class="keyboard" value="😘">😘</button>
-                <button class="keyboard" value="😄">😄</button>
-                <button class="keyboard" value="😎">😎</button>
-                <button class="keyboard" value="😉">😉</button>
-                <button class="keyboard" value="😋">😋</button>
-                <button class="keyboard" value="😍">😋</button>
+                <button class="emojis" value="😊">😊</button>
+                <button class="emojis" value="😂">😂</button>
+                <button class="emojis" value="🤣">🤣</button>
+                <button class="emojis" value="😒">😒</button>
+                <button class="emojis" value="😘">😘</button>
+                <button class="emojis" value="😄">😄</button>
+                <button class="emojis" value="😎">😎</button>
+                <button class="emojis" value="😉">😉</button>
+                <button class="emojis" value="😋">😋</button>
+                <button class="emojis" value="😍">😋</button>
             </div>
             <div class="row">
-                <button class="keyboard" value="😘">😘</button>
-                <button class="keyboard" value="😛">😛</button>
-                <button class="keyboard" value="😌">😌</button>
-                <button class="keyboard" value="😴">😴</button>
-                <button class="keyboard" value="🥱">🥱</button>
-                <button class="keyboard" value="😫">😫</button>
-                <button class="keyboard" value="😪">😪</button>
-                <button class="keyboard" value="😯">😯</button>
-                <button class="keyboard" value="🤐">🤐</button>
-                <button class="keyboard" value="😐">😐</button>
+                <button class="emojis" value="😘">😘</button>
+                <button class="emojis" value="😛">😛</button>
+                <button class="emojis" value="😌">😌</button>
+                <button class="emojis" value="😴">😴</button>
+                <button class="emojis" value="🥱">🥱</button>
+                <button class="emojis" value="😫">😫</button>
+                <button class="emojis" value="😪">😪</button>
+                <button class="emojis" value="😯">😯</button>
+                <button class="emojis" value="🤐">🤐</button>
+                <button class="emojis" value="😐">😐</button>
             </div>
             <div class="row">
-                <button class="keyboard" value="😑">😑</button>
-                <button class="keyboard" value="🥰">🥰</button>
-                <button class="keyboard" value="😗">😗</button>
-                <button class="keyboard" value="😙">😙</button>
-                <button class="keyboard" value="😚">😚</button>
-                <button class="keyboard" value="🙂">🙂</button>
-                <button class="keyboard" value="🤗">🤗</button>
-                <button class="keyboard" value="🤩">🤩</button>
+                <button class="emojis" value="😑">😑</button>
+                <button class="emojis" value="🥰">🥰</button>
+                <button class="emojis" value="😗">😗</button>
+                <button class="emojis" value="😙">😙</button>
+                <button class="emojis" value="😚">😚</button>
+                <button class="emojis" value="🙂">🙂</button>
+                <button class="emojis" value="🤗">🤗</button>
+                <button class="emojis" value="🤩">🤩</button>
                 <button class="delete" name="delete" onclick="deleteChar()">⬅</button>
             </div>
             <div class="row">

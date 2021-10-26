@@ -1,60 +1,81 @@
-//TODO 0 SEGUEIX LES PAUTES DEL TREBALL EN PROJECTES VISTES A CLASSE ✅
-/*TODO 4 EMOJI BUTTONS*/
-/*TODO 5 CEC: LA TECLA C ESBORRA EL TEXT DE LA TEXT AREA Y CE ESBORRA LA DARRERA PARAULA (TRIM) ✅*/
-function deleteAll() {
-    document.getElementById("texto").innerHTML = "";
-}
-function deleteWord() {
-    let msg = document.getElementById("texto").value.trim();
-    let space = msg.lastIndexOf(" ");
-    msg = msg.substr(0, space);
-    document.getElementById("texto").innerHTML = msg;
-}
-/*TODO 6 LA TECLA <-- ESBORRA EL DARRER CARÀCTER I--> ESBORRA EL PRIMER CARÀCTER ✅*/
-function deleteChar() {
-    let msg = document.getElementById("texto").value;
-    document.getElementById("texto").innerHTML = msg.substr(0, msg.length - 1);
-}
-function deleteFirst() {
-    let msg = document.getElementById("texto").value;
-    document.getElementById("texto").innerHTML = msg.substr(1, msg.length);
-}
-/*TODO 2 TEXT AREA: LLETRES ✅*/
-//KEYBOARD CODE
+//DECLARACION DE LAS VARIABLES
+/**
+ * Declaracion de la variable button que almacena todos los botones con la clase: mayus
+ * @type {NodeListOf<Element>}
+ */
+let button = document.querySelectorAll('.mayus');
 
+/**
+ * Declaracion de la variable emojis que almacena todos los botones con la clase: emojis
+ * @type {NodeListOf<Element>}
+ */
+let emojis = document.querySelectorAll('.emojis');
+/**
+ * Declaracion de la variable timer. Necesario para el dblclick del boton mayuscula
+ */
+let timer;
+/**
+ * @var estado
+ * necesario para saber si se ha dado uno o dos clicks al boton mayuscula
+ * el estado sera 0 si el teclado ha de estar en minusculas
+ * el estado sera 1 si al boton mayuscula le han dado un click
+ * el estado sera 2 si al boton mayuscula le han dado dos clicks
+ */
+let estado;
 
+/**
+ * Declaracion de la variable space que almacena todos los botones con la clase: space
+ * @type {NodeListOf<Element>}
+ */
+let space = document.querySelectorAll('.space');
 
-
-
-//FOR SPECIAL CHARACTERS
+/**
+ * Declaracion de la variable special que almacena todos los botones con la clase: special
+ * @type {NodeListOf<Element>}
+ */
 let special = document.querySelectorAll('.special');
-special.forEach(letter => {
-    letter.addEventListener('click', event => {
-        document.getElementById("texto").innerHTML += letter.value;
+
+/**
+ * Declaracion de la variable keyboard que alamcena todos los botones con la clase: keyboard
+ * @type {NodeListOf<Element>}
+ */
+let keyboard = document.querySelectorAll('.keyboard');
+
+/**
+ * el codigo siguiente recorre todos los botones emojis y cuando les das click, lo concatena
+ * con el mensaje que se quiere enviar
+ */
+emojis.forEach(emoji => {
+    emoji.addEventListener('click', event => {
+        document.getElementById("texto").value += emoji.value;
     })
 });
 
-/*TODO 8 SPACE BUTTON ✅*/
-let space = document.querySelectorAll('.space');
+/**
+ * el codigo siguiente recorre todos los botones space y cuando les das click, lo concatena con el mensaje
+ * que se quiere enviar
+ */
 space.forEach(letter => {
     letter.addEventListener('click', event => {
-        document.getElementById("texto").innerHTML += letter.value;
+        document.getElementById("texto").value += letter.value;
     })
 });
 
+/**
+ * el codigo siguiente recorre todos los botones special y cuando les das click, lo concatena con el mensaje
+ * que se quiere enviar
+ */
+special.forEach(letter => {
+    letter.addEventListener('click', event => {
+        document.getElementById("texto").value += letter.value;
+    })
+});
 
-/*TODO 9 NEW LINE BUTTON*/
-//funciona en el text area pero no al enviar
-function line() {
-    document.getElementById("texto").innerHTML += `\n`;
-}
-
-//KEYBOARD TO MINUS TO
-/*TODO 7 MAJUSCULES DESACTIVAT/ 1 CARACTER EN MAJUSCULA / MAJUSCULES PERMANENTS */
-//dbl click and onclick
-var button = document.querySelectorAll('.mayus');
-let timer;
-var estado; //MINUSCULAS
+/**
+ * button para las mayusculas. Hacemos dos eventListeners: uno para un click y el otro para el doble click.
+ * En ambas recorremos los botones de clase "mayus". Al hacer un click, pasamos el estado a 1 y al hacer dos clicks,
+ * pasamos el estado a 2.
+ */
 button.forEach(but => {
     but.addEventListener('click', event => {
         let keyboard = document.querySelectorAll('.keyboard');
@@ -72,29 +93,23 @@ button.forEach(but => {
         toUpperPerm();
     })});
 
+/**
+ * recorremos la variable declarada anteriormente llamada keyboard la cual almacena todos los botones
+ * con la clase "keyboard". Cada vez que hagamos un click a alguno de estos botones, concatenaremos el
+ * valor del boton con el texto que se quiere enviar. Ademas de concatenar, dependiendo del estado, pasaremos
+ * el teclado en mayuscula o en minuscula.
+ */
 
-function toUpperPerm() {
-    document.getElementById('keyboardMinus').style.display = "none";
-    document.getElementById('keyboardMayus').style.display = "block";
-    document.getElementById('keyboardNum').style.display = "none";
-    document.getElementById('keyboardSymb').style.display = "none";
-    document.getElementById('keyboardGif').style.display = "none";
-}
-
-
-
-let keyboard = document.querySelectorAll('.keyboard');
 keyboard.forEach(letter => {
     letter.addEventListener('click', event => {
 
-        document.getElementById("texto").innerHTML += letter.value;
+        document.getElementById("texto").value += letter.value;
         let typing = document.getElementById("texto");
+        // con esta instruccion, le decimos que el scroll vaya
+        // bajando cada vez que se escribe en una nueva linea
         typing.scrollTop = typing.scrollHeight;
-
-
         if (estado == 1){
             toLower();
-
         }
         else if(estado == 2){
             toUpperPerm();
@@ -102,7 +117,115 @@ keyboard.forEach(letter => {
     })
 });
 
-//TODO ARREGLAR EL TEXT AREA AL TECLEAR Y CLICKEO
+
+//FUNCIONES
+/**
+ * Funciones de borrar: deleteAll(), deleteWord(), deleteChar(), deleteFirst()
+ */
+
+function deleteAll() {
+    document.getElementById("texto").value = ""; //el text area sera completamente borrado
+}
+function deleteWord() {
+    let msg = document.getElementById("texto").value.trim(); //borramos todos los espacios que puede haber en los lados
+    let space = msg.lastIndexOf(" "); //buscamos el indice del ultimo espacio que haya dentro de la cadena
+    msg = msg.substr(0, space); //hacemos un substr para borrar la ultima palabra
+    document.getElementById("texto").value = msg; //sustituimos el textarea por el resultado despues de hacer un substr
+}
+
+function deleteChar() {
+    let msg = document.getElementById("texto").value;
+    //le hacemos un substr para borrar el ultimo caracter que se haya introducido en el text area
+    document.getElementById("texto").value = msg.substr(0, msg.length - 1);
+}
+
+function deleteFirst() {
+    let msg = document.getElementById("texto").value;
+    document.getElementById("texto").value = msg.substr(1, msg.length);
+}
+
+/**
+ * funcion line() --> me devuelve una nueva linea. En el text area el intro == \n
+ */
+function line() {
+    document.getElementById("texto").value += `\n`;
+}
+
+/**
+ * function send() --> al hacer click al boton, enviamos el contenido del text area con la hora actual
+ * @returns {number} --> devolvera el estado del teclado
+ */
+
+function send() {
+    let today = new Date(); //guardamos la fecha actual
+    //guardamos la hora y hacemos un slice(-2) para mostrarnos la hora con el siguiente formato: HH:MM
+    let hour = ("0" + today.getHours()).slice(-2) + ':' + ("0" + today.getMinutes()).slice(-2);
+    //cogemos el contenido del text area
+    let message = document.getElementById("texto").value;
+
+    //a continuacion, reemplazamos todos los \n por un <br> ya que en el text area para hacer una nueva linea es \n,
+    // en cambio, al enviarlo al div (html), necesitamos el <br> de esta manera, nos los imprimira en una nueva linea
+    while (message.includes("\n")) {
+        message = message.replace("\n", "<br>");
+    }
+
+    //si el text area NO esta vacio, concateno todos los mensajes con el contenido del text area
+    if (message != ""){
+        document.getElementsByClassName("app-messagingArea")[0].innerHTML+=
+            `<div class="message"><p class="textContent">${message}</p><p class="time">${hour}</p></div>`;
+    }
+
+    //vacio el text area
+    document.getElementById("texto").value = "";
+    let myMsg = document.getElementsByClassName("app-messagingArea")[0];
+    // con esta instruccion, le decimos que el scroll vaya
+    // bajando cada vez que se envia un mensaje
+    myMsg.scrollTop = myMsg.scrollHeight;
+    //una vez que enviamos el mensaje, ponemos el teclado en mayuscula
+    toUpperPerm();
+    //y pasamos el estado a 1
+    return estado=1;
+}
+
+/**
+ * function onLoad() --> Al cargarse la app, enviaremos la fecha actual junto con un mensaje
+ *
+ */
+function onLoad() {
+    let today = new Date();
+    //Teclado en mayuscula
+    toUpperPerm();
+    const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Deciembre"];
+
+    //guardamos la fecha actual en la variable fecha
+    let fecha = today.getDay() + " " + monthNames[today.getMonth()] + " " + today.getFullYear();
+    document.getElementById("date").innerHTML = fecha;
+
+    //guardamos la hora actual en la variable hour
+    let hour = ("0" + today.getHours()).slice(-2) + ':' + ("0" + today.getMinutes()).slice(-2);
+    document.getElementsByClassName("app-messagingArea")[0].innerHTML+=
+        `<div class="otro"><p class="textContent">Bienvenid@ a mi aplicacion</p><p class="time">${hour}</p></div>`;
+
+
+    // Devolvemos el estado a 1
+    return estado =  1;
+}
+
+//TECLADOS
+/**
+ * function toUpperPerm() --> teclado en mayuscula
+ */
+function toUpperPerm() {
+    document.getElementById('keyboardMinus').style.display = "none";
+    document.getElementById('keyboardMayus').style.display = "block";
+    document.getElementById('keyboardNum').style.display = "none";
+    document.getElementById('keyboardSymb').style.display = "none";
+    document.getElementById('keyboardGif').style.display = "none";
+}
+/**
+ * function toKeyboard() --> teclado en minuscula y con el boton gif
+ */
 function toKeyboard(){
     document.getElementById('keyboardMinus').style.display = "block";
     document.getElementById('keyboardMayus').style.display = "none";
@@ -111,8 +234,10 @@ function toKeyboard(){
     document.getElementById('keyboardGif').style.display = "none";
     document.getElementById('keyboard2Gif').style.display = "block";
     document.getElementById('gif2Keyboard').style.display = "none";
-
 }
+/**
+ * function toLower() --> teclado en minuscula
+ */
 function toLower() {
     document.getElementById('keyboardMinus').style.display = "block";
     document.getElementById('keyboardMayus').style.display = "none";
@@ -121,6 +246,9 @@ function toLower() {
     document.getElementById('keyboardGif').style.display = "none";
     return estado = 0;
 }
+/**
+ * function toNum() --> teclado numerico
+ */
 function toNum() {
     document.getElementById('keyboardMinus').style.display = "none";
     document.getElementById('keyboardMayus').style.display = "none";
@@ -128,6 +256,9 @@ function toNum() {
     document.getElementById('keyboardSymb').style.display = "none";
     document.getElementById('keyboardGif').style.display = "none";
 }
+/**
+ * function toSigns() --> teclado de caracteres especiales
+ */
 function toSigns() {
     document.getElementById('keyboardMinus').style.display = "none";
     document.getElementById('keyboardMayus').style.display = "none";
@@ -135,7 +266,10 @@ function toSigns() {
     document.getElementById('keyboardSymb').style.display = "block";
     document.getElementById('keyboardGif').style.display = "none";
 }
-function gif() {
+/**
+ * function toEmojis() --> teclado de emojis
+ */
+function toEmojis() {
     document.getElementById('keyboardMinus').style.display = "none";
     document.getElementById('keyboardMayus').style.display = "none";
     document.getElementById('keyboardNum').style.display = "none";
@@ -144,132 +278,3 @@ function gif() {
     document.getElementById('keyboard2Gif').style.display = "none";
     document.getElementById('gif2Keyboard').style.display = "block";
 }
-
-/*TODO 3 SEND BUTTON ✅*/
-
-function send() {
-    let today = new Date();
-    let hour = ("0" + today.getHours()).slice(-2) + ':' + ("0" + today.getMinutes()).slice(-2);
-    //message with class without hour
-    let myDiv = document.createElement("div");
-    let clase = document.createAttribute("class");
-    clase.value = "message";
-    myDiv.setAttributeNode(clase);
-
-
-    //añadimos las p's
-    //primera p con textContent
-    let p1 = document.createElement("p");
-    let classP1 = document.createAttribute("class");
-    classP1.value = "textContent";
-    p1.setAttributeNode(classP1);
-
-    //ya hemos creado <p class="textContent"></p>
-    //a continuacion creamos el text
-    let content = document.getElementById("texto").innerHTML
-    if (content != ""){
-        //añado el div
-        document.getElementsByClassName("app-messagingArea")[0].appendChild(myDiv);
-        //TODO ARREGLAR LA LINEA NUEVA!!!!! (ARREGLADO PERO UNA CACA)
-        while (content.includes("\n")) {
-            content = content.replace("\n", "<br>");
-        }
-        let message = document.createTextNode(content);
-        p1.appendChild(message); //mensaje hecho <p class="textContent">MESSAGE</p>
-
-        let divsNum = document.querySelectorAll('.message').length;
-        let pContent = document.querySelectorAll('.textContent').length;
-        //myDiv.appendChild(p1);
-        document.getElementsByClassName("message")[divsNum - 1].appendChild(p1);
-        document.getElementsByClassName("textContent")[pContent].innerHTML = content;
-
-
-        //segunda p con time
-        let p2 = document.createElement("p");
-        let classP2 = document.createAttribute("class");
-        classP2.value = "time";
-        p2.setAttributeNode(classP2);
-
-        //ya hemos creado <p class="time"></p>
-        //a continuacion creamos el texto
-        let hourMinutes = document.createTextNode(hour);
-        p2.appendChild(hourMinutes); //mensaje hecho <p class="time">hourMinutes</p>
-
-
-        //a continuación, añadimos la p dentro del div
-
-        document.getElementsByClassName("message")[divsNum - 1].appendChild(p2);
-        /*document.getElementsByClassName("message")[divsNum].appendChild(p2);*/
-
-        document.getElementById("texto").innerHTML = "";
-        let myMsg = document.getElementsByClassName("app-messagingArea")[0];
-        myMsg.scrollTop = myMsg.scrollHeight;
-    }
-
-
-
-}
-
-//TODO ARREGLAR LOS MARGINS DEL BACKGROUND DE LOS MENSAJES ✅
-
-
-function fechaActual() {
-    let today = new Date();
-    const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Deciembre"];
-    let fecha = today.getDay() + " " + monthNames[today.getMonth()] + " " + today.getFullYear();
-    document.getElementById("date").innerHTML = fecha;
-}
-
-/*TODO 19 FORMATO DE LA HORA ✅*/
-
-function firstMsg() {
-    toUpperPerm();
-    estado = 1;
-
-    let today = new Date();
-    let hour = ("0" + today.getHours()).slice(-2) + ':' + ("0" + today.getMinutes()).slice(-2);
-    //message with class without hour
-    let myDiv = document.createElement("div");
-    let clase = document.createAttribute("class");
-    clase.value = "otro";
-    myDiv.setAttributeNode(clase);
-    //añado el div
-    document.getElementsByClassName("app-messagingArea")[0].appendChild(myDiv);
-
-    //añadimos las p's
-    //primera p con textContent
-    let p1 = document.createElement("p");
-    let classP1 = document.createAttribute("class");
-    classP1.value = "textContent";
-    p1.setAttributeNode(classP1);
-
-    //ya hemos creado <p class="textContent"></p>
-    //a continuacion creamos el texto
-    let content = "Bienvenid@ a mi aplicación!"
-    let message = document.createTextNode(content);
-    p1.appendChild(message); //mensaje hecho <p class="textContent">MESSAGE</p>
-
-    let divsNum = document.querySelectorAll('.otro').length;
-    let pContent = document.querySelectorAll('.textContent').length;
-    //myDiv.appendChild(p1);
-    document.getElementsByClassName("otro")[divsNum - 1].appendChild(p1);
-
-    //segunda p con time
-    let p2 = document.createElement("p");
-    let classP2 = document.createAttribute("class");
-    classP2.value = "time";
-    p2.setAttributeNode(classP2);
-
-    //ya hemos creado <p class="time"></p>
-    //a continuacion creamos el texto
-    let hourMinutes = document.createTextNode(hour);
-    p2.appendChild(hourMinutes); //mensaje hecho <p class="time">hourMinutes</p>
-
-    //a continuación, añadimos la p dentro del div
-
-    document.getElementsByClassName("otro")[divsNum - 1].appendChild(p2);
-    return estado;
-}
-
-//TODO En clicar sobre GIF, se mostren els emojis (mínim de 3)  i  la icona “GIF” se canvia per la icona d’un teclat. ✅
