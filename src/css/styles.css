@@ -3,7 +3,6 @@
     margin: 0;
 }
 
-
 .app-container {
     height: 640px;
     width: 360px;
@@ -11,12 +10,13 @@
     background-size: cover;
     background-repeat: repeat;
     display: grid;
-    grid-template-rows: 60px 360px 50px 150px;
+    grid-template-rows: 10% 55% 8% 30%;
     grid-template-areas:
         "header"
         "main"
         "text"
         "keyboard";
+    overflow: hidden;
 }
 
 .app-header {
@@ -32,7 +32,6 @@
     width: 100%;
     justify-self: self-end;
     grid-area: main;
-    /* display: grid; */
     overflow-y: scroll;
     justify-items: center;
 }
@@ -104,9 +103,9 @@
 
 .row {
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 1vh;
     justify-content: space-between;
-    height: 30px;
+    height: 5vh;
 }
 
 .keyboard, .minus {
@@ -268,8 +267,6 @@
     background-color: #e4f4fc;
     color: #575c64;
     border-radius: 3px;
-    /* font-size: smaller; */
-    /* text-align-last: center; */
     align-self: center;
     margin-top: auto;
 
@@ -306,22 +303,7 @@
     background-color: whitesmoke;
 }
 
-@media only screen and (max-width: 400px) {
-    .app-container {
-        background-image: url(../images/background.png);
-        background-size: cover;
-        background-repeat: repeat;
-        display: grid;
-        grid-template-rows: 60px 360px 50px 150px;
-        grid-template-areas:
-        "header"
-        "main"
-        "text"
-        "keyboard";
-    }
-}
-
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 600px) {
     body {
         display: flex;
         justify-content: center;
@@ -331,12 +313,32 @@
         background-size: cover;
         background-repeat: repeat;
         display: grid;
-        grid-template-rows: 60px 360px 50px 150px;
+        height: 600px;
         grid-template-areas:
         "header"
         "main"
         "text"
         "keyboard";
         width: 360px;
+    }
+}
+
+@media only screen and (min-width:400px)  {
+    .app-container{
+        height:100vh;
+        width:100vw;
+        grid-template-rows: 8% 62% 7% 20%;
+    }
+    .app-keyboardArea {
+        grid-area: keyboard;
+        background-color: #efefef;
+        padding: 4px;
+    }
+
+    .row{
+        display: flex;
+        margin-bottom: 1vh;
+        justify-content: space-between;
+        height: 4vh;
     }
 }
