@@ -10,13 +10,12 @@
     background-size: cover;
     background-repeat: repeat;
     display: grid;
-    grid-template-rows: 10% 55% 8% 30%;
+    grid-template-rows: 10% 55% 8% 23%;
     grid-template-areas:
         "header"
         "main"
         "text"
         "keyboard";
-    overflow: hidden;
 }
 
 .app-header {
@@ -80,7 +79,7 @@
     grid-area: keyboard;
     background-color: #efefef;
     padding: 8px;
-    margin-bottom: -20px;
+    margin-bottom: -25px;
 }
 
 
@@ -129,6 +128,11 @@
 .keyboard:active {
     box-shadow: 0 5px black;
     transform: translateY(1px);
+}
+
+.mayus:active {
+    background-color: #575c64;
+    color: #C5C6D0;
 }
 
 .space {
@@ -303,31 +307,41 @@
     background-color: whitesmoke;
 }
 
+
 @media only screen and (min-width: 600px) {
     body {
         display: flex;
         justify-content: center;
+        overflow: hidden;
     }
 
     .app-container {
         background-size: cover;
         background-repeat: repeat;
         display: grid;
-        height: 600px;
+        height: 640px;
+        width: 360px;
         grid-template-areas:
         "header"
         "main"
         "text"
         "keyboard";
-        width: 360px;
+    }
+    .row{
+        display: flex;
+        margin-bottom: 1vh;
+        justify-content: space-between;
+        height: 4vh;
     }
 }
 
-@media only screen and (min-width:400px)  {
+/*
+@media only screen and (min-width:500px)  {
     .app-container{
         height:100vh;
         width:100vw;
         grid-template-rows: 8% 62% 7% 20%;
+        overflow: hidden;
     }
     .app-keyboardArea {
         grid-area: keyboard;
@@ -342,3 +356,4 @@
         height: 4vh;
     }
 }
+*/
