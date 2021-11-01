@@ -122,7 +122,7 @@
                 <button class="space" name="space" value=" ">Space</button>
                 <button class="special" onclick="deleteAll()">C</button>
                 <button class="special" onclick="deleteWord()">CE</button>
-                <button class="special" onclick="deleteFirst()">➡</button>
+                <button class="special" onclick="deleteFirst()">➔</button>
                 <button class="special" name="intro" onclick="line()">↵</button>
             </div>
         </div>
@@ -167,7 +167,7 @@
                 <button class="space" name="space" value=" ">Space</button>
                 <button class="special" onclick="deleteAll()">C</button>
                 <button class="special" onclick="deleteWord()">CE</button>
-                <button class="special" onclick="deleteFirst()">➡</button>
+                <button class="special" onclick="deleteFirst()">➔</button>
                 <button class="special" name="intro" onclick="line()">↵</button>
             </div>
         </div>
@@ -212,7 +212,7 @@
                 <button class="space" name="space" value=" ">Space</button>
                 <button class="special" onclick="deleteAll()">C</button>
                 <button class="special" onclick="deleteWord()">CE</button>
-                <button class="special" onclick="deleteFirst()">➡</button>
+                <button class="special" onclick="deleteFirst()">➔</button>
                 <button class="special" name="intro" onclick="line()">↵</button>
             </div>
         </div>
@@ -253,13 +253,243 @@
                 <button class="emojis" name="delete" onclick="deleteChar()">⌫</button>
             </div>
             <div class="row">
-                <button class="emoji">+</button>
-                <button class="emoji">☺</button>
-                <button class="emoji">👩</button>
-                <button class="emoji">☏</button>
-                <button class="emoji">☀</button>
-                <button class="emoji">🕐</button>
-                <button class="emoji">❤</button>
+                <button class="emoji" onclick="">+</button>
+                <button class="emoji" onclick="toEmojis()">☺</button>
+                <button class="emoji" onclick="emojisPersonas()">👩</button>
+                <button class="emoji" onclick="emojisObj()">☏</button>
+                <button class="emoji" onclick="emojisWeather()">☀</button>
+                <button class="emoji" onclick="emojisObjects2()">🕐</button>
+                <button class="emoji" onclick="emojisFeelings()">❤</button>
+            </div>
+        </div>
+        <div id="keyboardPersonas">
+            <div class="row">
+                <button class="emojis" value="👩">👩</button>
+                <button class="emojis" value="👨">👨</button>
+                <button class="emojis" value="🧑">🧑</button>
+                <button class="emojis" value="👧">👧</button>
+                <button class="emojis" value="👦">👦</button>
+                <button class="emojis" value="🧒">🧒</button>
+                <button class="emojis" value="👶">👶</button>
+                <button class="emojis" value="👵">👵</button>
+                <button class="emojis" value="👴">👴</button>
+                <button class="emojis" value="🧓">🧓</button>
+            </div>
+            <div class="row">
+                <button class="emojis" value="👩‍🦳">👩‍🦳</button>
+                <button class="emojis" value="👨‍🦳">👨‍🦳</button>
+                <button class="emojis" value="👱‍♀️">👱‍♀️</button>
+                <button class="emojis" value="👱‍♂️">👱‍♂️</button>
+                <button class="emojis" value="👳‍♂️">👳‍♂️</button>
+                <button class="emojis" value="🎅">🎅</button>
+                <button class="emojis" value="👨‍🎓">👨‍🎓</button>
+                <button class="emojis" value="👩‍🏫">👩‍🏫</button>
+                <button class="emojis" value="👨‍🏫">👨‍🏫</button>
+                <button class="emojis" value="👨‍⚖️">👨‍⚖️</button>
+            </div>
+            <div class="row">
+                <button class="emojis" value="👨‍✈️">👨‍✈️</button>
+                <button class="emojis" value="👩‍✈️">👩‍✈️</button>
+                <button class="emojis" value="👨‍💻">👨‍💻</button>
+                <button class="emojis" value="👩‍🎤">👩‍🎤</button>
+                <button class="emojis" value="👨‍🎤">👨‍🎤</button>
+                <button class="emojis" value="👩‍🎨">👩‍🎨</button>
+                <button class="emojis" value="👨‍🎨">👨‍🎨</button>
+                <button class="emojis" value="👰">👰</button>
+                <button class="emojis" name="delete" onclick="deleteChar()">⌫</button>
+            </div>
+            <div class="row">
+                <button class="emoji" onclick="">+</button>
+                <button class="emoji" onclick="toEmojis()">☺</button>
+                <button class="emoji" onclick="emojisPersonas()">👩</button>
+                <button class="emoji" onclick="emojisObj()">☏</button>
+                <button class="emoji" onclick="emojisWeather()">☀</button>
+                <button class="emoji" onclick="emojisObjects2()">🕐</button>
+                <button class="emoji" onclick="emojisFeelings()">❤</button>
+            </div>
+        </div>
+        <div id="keyboardObjects">
+            <div class="row">
+                <button class="emojis" value="🎈">🎈</button>
+                <button class="emojis" value="🎆">🎆</button>
+                <button class="emojis" value="🎇">🎇</button>
+                <button class="emojis" value="🧨">🧨</button>
+                <button class="emojis" value="✨">✨</button>
+                <button class="emojis" value="🎊">🎊</button>
+                <button class="emojis" value="🎉">🎉</button>
+                <button class="emojis" value="🎃">🎃</button>
+                <button class="emojis" value="🎄">🎄</button>
+                <button class="emojis" value="🎋">🎋</button>
+            </div>
+            <div class="row">
+                <button class="emojis" value="🎎">🎎</button>
+                <button class="emojis" value="🎍">🎍</button>
+                <button class="emojis" value="🎏">🎏</button>
+                <button class="emojis" value="🎐">🎐</button>
+                <button class="emojis" value="🎑">🎑</button>
+                <button class="emojis" value="🧧">🧧</button>
+                <button class="emojis" value="🎀">🎀</button>
+                <button class="emojis" value="🎁">🎁</button>
+                <button class="emojis" value="🎗">🎗</button>
+                <button class="emojis" value="🎞">🎞</button>
+            </div>
+            <div class="row">
+                <button class="emojis" value="🎟">🎟</button>
+                <button class="emojis" value="🎫">🎫</button>
+                <button class="emojis" value="🎠">🎠</button>
+                <button class="emojis" value="🎡">🎡</button>
+                <button class="emojis" value="🎢">🎢</button>
+                <button class="emojis" value="🎪">🎪</button>
+                <button class="emojis" value="🎭">🎭</button>
+                <button class="emojis" value="🎨">🎨</button>
+                <button class="emojis" name="delete" onclick="deleteChar()">⌫</button>
+            </div>
+            <div class="row">
+                <button class="emoji" onclick="">+</button>
+                <button class="emoji" onclick="toEmojis()">☺</button>
+                <button class="emoji" onclick="emojisPersonas()">👩</button>
+                <button class="emoji" onclick="emojisObj()">☏</button>
+                <button class="emoji" onclick="emojisWeather()">☀</button>
+                <button class="emoji" onclick="emojisObjects2()">🕐</button>
+                <button class="emoji" onclick="emojisFeelings()">❤</button>
+            </div>
+        </div>
+        <div id="keyboardWeather">
+            <div class="row">
+                <button class="emojis" value="☁">☁</button>
+                <button class="emojis" value="⛅">⛅</button>
+                <button class="emojis" value="⛈">⛈</button>
+                <button class="emojis" value="🌤">🌤</button>
+                <button class="emojis" value="🌥">🌥</button>
+                <button class="emojis" value="🌦">🌦</button>
+                <button class="emojis" value="🌧">🌧</button>
+                <button class="emojis" value="🌨">🌨</button>
+                <button class="emojis" value="🌩">🌩</button>
+                <button class="emojis" value="🌪">🌪</button>
+            </div>
+            <div class="row">
+                <button class="emojis" value="🌫">🌫</button>
+                <button class="emojis" value="🌝">🌝</button>
+                <button class="emojis" value="🌘">🌘</button>
+                <button class="emojis" value="🌗">🌗</button>
+                <button class="emojis" value="🌖">🌖</button>
+                <button class="emojis" value="🌕">🌕</button>
+                <button class="emojis" value="🌔">🌔</button>
+                <button class="emojis" value="🌓">🌓</button>
+                <button class="emojis" value="🌒">🌒</button>
+                <button class="emojis" value="🌑">🌑</button>
+            </div>
+            <div class="row">
+                <button class="emojis" value="🌙">🌙</button>
+                <button class="emojis" value="🌚">🌚</button>
+                <button class="emojis" value="🌛">🌛</button>
+                <button class="emojis" value="🌜">🌜</button>
+                <button class="emojis" value="☀">☀</button>
+                <button class="emojis" value="🌞">🌞</button>
+                <button class="emojis" value="⭐">⭐</button>
+                <button class="emojis" value="🌟">🌟</button>
+                <button class="emojis" name="delete" onclick="deleteChar()">⌫</button>
+            </div>
+            <div class="row">
+                <button class="emoji" onclick="">+</button>
+                <button class="emoji" onclick="toEmojis()">☺</button>
+                <button class="emoji" onclick="emojisPersonas()">👩</button>
+                <button class="emoji" onclick="emojisObj()">☏</button>
+                <button class="emoji" onclick="emojisWeather()">☀</button>
+                <button class="emoji" onclick="emojisObjects2()">🕐</button>
+                <button class="emoji" onclick="emojisFeelings()">❤</button>
+            </div>
+        </div>
+        <div id="keyboardObjects2">
+            <div class="row">
+                <button class="emojis" value="🚗">🚗</button>
+                <button class="emojis" value="🚓">🚓</button>
+                <button class="emojis" value="🚕">🚕</button>
+                <button class="emojis" value="🛺">🛺</button>
+                <button class="emojis" value="🚙">🚙</button>
+                <button class="emojis" value="🚌">🚌</button>
+                <button class="emojis" value="🚐">🚐</button>
+                <button class="emojis" value="🚎">🚎</button>
+                <button class="emojis" value="🚑">🚑</button>
+                <button class="emojis" value="🚒">🚒</button>
+            </div>
+            <div class="row">
+                <button class="emojis" value="🚚">🚚</button>
+                <button class="emojis" value="🚛">🚛</button>
+                <button class="emojis" value="🚜">🚜</button>
+                <button class="emojis" value="🚘">🚘</button>
+                <button class="emojis" value="🚔">🚔</button>
+                <button class="emojis" value="🚖">🚖</button>
+                <button class="emojis" value="🚍">🚍</button>
+                <button class="emojis" value="🦽">🦽</button>
+                <button class="emojis" value="🦼">🦼</button>
+                <button class="emojis" value="🛹">🛹</button>
+            </div>
+            <div class="row">
+                <button class="emojis" value="🚲">🚲</button>
+                <button class="emojis" value="🛴">🛴</button>
+                <button class="emojis" value="🛵">🛵</button>
+                <button class="emojis" value="🏍">🏍</button>
+                <button class="emojis" value="🏎">🏎</button>
+                <button class="emojis" value="🚄">🚄</button>
+                <button class="emojis" value="🚅">🚅</button>
+                <button class="emojis" value="🚈">🚈</button>
+                <button class="emojis" name="delete" onclick="deleteChar()">⌫</button>
+            </div>
+            <div class="row">
+                <button class="emoji" onclick="">+</button>
+                <button class="emoji" onclick="toEmojis()">☺</button>
+                <button class="emoji" onclick="emojisPersonas()">👩</button>
+                <button class="emoji" onclick="emojisObj()">☏</button>
+                <button class="emoji" onclick="emojisWeather()">☀</button>
+                <button class="emoji" onclick="emojisObjects2()">🕐</button>
+                <button class="emoji" onclick="emojisFeelings()">❤</button>
+            </div>
+        </div>
+        <div id="keyboardFeelings">
+            <div class="row">
+                <button class="emojis" value="❤">❤</button>
+                <button class="emojis" value="🧡">🧡</button>
+                <button class="emojis" value="💛">💛</button>
+                <button class="emojis" value="💚">💚</button>
+                <button class="emojis" value="💙">💙</button>
+                <button class="emojis" value="💜">💜</button>
+                <button class="emojis" value="🤎">🤎</button>
+                <button class="emojis" value="🖤">🖤</button>
+                <button class="emojis" value="🤍">🤍</button>
+                <button class="emojis" value="💔">💔</button>
+            </div>
+            <div class="row">
+                <button class="emojis" value="❣">❣</button>
+                <button class="emojis" value="💕">💕</button>
+                <button class="emojis" value="💞">💞</button>
+                <button class="emojis" value="💓">💓</button>
+                <button class="emojis" value="💗">💗</button>
+                <button class="emojis" value="💖">💖</button>
+                <button class="emojis" value="💘">💘</button>
+                <button class="emojis" value="💝">💝</button>
+                <button class="emojis" value="💟">💟</button>
+                <button class="emojis" value="💌">💌</button>
+            </div>
+            <div class="row">
+                <button class="emojis" value="💢">💢</button>
+                <button class="emojis" value="💥">💥</button>
+                <button class="emojis" value="💤">💤</button>
+                <button class="emojis" value="💦">💦</button>
+                <button class="emojis" value="💨">💨</button>
+                <button class="emojis" value="💫">💫</button>
+                <button class="emojis" value="🕳">🕳</button>
+                <button class="emojis" value="✝">✝</button>
+                <button class="emojis" name="delete" onclick="deleteChar()">⌫</button>
+            </div>
+            <div class="row">
+                <button class="emoji" onclick="">+</button>
+                <button class="emoji" onclick="toEmojis()">☺</button>
+                <button class="emoji" onclick="emojisPersonas()">👩</button>
+                <button class="emoji" onclick="emojisObj()">☏</button>
+                <button class="emoji" onclick="emojisWeather()">☀</button>
+                <button class="emoji" onclick="emojisObjects2()">🕐</button>
+                <button class="emoji" onclick="emojisFeelings()">❤</button>
             </div>
         </div>
     </div>

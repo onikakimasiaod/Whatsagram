@@ -115,7 +115,6 @@ keyboard.forEach(letter => {
         // bajando cada vez que se escribe en una nueva linea
         typing.scrollTop = typing.scrollHeight;
         if (estado == 1) {
-            document.getElementsByClassName("minus")[0].textContent = "🡅";
             toLower();
         } else if (estado == 2) {
             toUpperPerm();
@@ -231,8 +230,16 @@ function toUpperPerm() {
     document.getElementById('keyboardNum').style.display = "none";
     document.getElementById('keyboardSymb').style.display = "none";
     document.getElementById('keyboardGif').style.display = "none";
+    document.getElementById('keyboardPersonas').style.display="none"
+    document.getElementById('keyboardObjects').style.display="none";
+    document.getElementById('keyboardWeather').style.display="none";
+    document.getElementById('keyboardFeelings').style.display="none";
+    document.getElementById('keyboardObjects2').style.display="none";
     if (estado == 2){
         document.getElementsByClassName("minus")[0].textContent = "⇪";
+    }
+    else if(estado == 1){
+        document.getElementsByClassName("minus")[0].textContent = "🡅";
     }
 }
 
@@ -247,6 +254,12 @@ function toKeyboard() {
     document.getElementById('keyboardGif').style.display = "none";
     document.getElementById('keyboard2Gif').style.display = "block";
     document.getElementById('gif2Keyboard').style.display = "none";
+    document.getElementById('keyboardPersonas').style.display="none";
+    document.getElementById('keyboardObjects').style.display="none";
+    document.getElementById('keyboardObjects').style.display="none";
+    document.getElementById('keyboardWeather').style.display="none";
+    document.getElementById('keyboardFeelings').style.display="none";
+    document.getElementById('keyboardObjects2').style.display="none";
 }
 
 /**
@@ -294,4 +307,82 @@ function toEmojis() {
     document.getElementById('keyboardGif').style.display = "block";
     document.getElementById('keyboard2Gif').style.display = "none";
     document.getElementById('gif2Keyboard').style.display = "block";
+    document.getElementById('keyboardPersonas').style.display="none";
+    document.getElementById('keyboardObjects').style.display="none";
+    document.getElementById('keyboardWeather').style.display="none";
+    document.getElementById('keyboardFeelings').style.display="none";
+    document.getElementById('keyboardObjects2').style.display="none";
+}
+
+function emojisPersonas() {
+    document.getElementById('keyboardMinus').style.display = "none";
+    document.getElementById('keyboardMayus').style.display = "none";
+    document.getElementById('keyboardNum').style.display = "none";
+    document.getElementById('keyboardSymb').style.display = "none";
+    document.getElementById('keyboardGif').style.display = "none";
+    document.getElementById('keyboard2Gif').style.display = "none";
+    document.getElementById('gif2Keyboard').style.display = "block";
+    document.getElementById('keyboardPersonas').style.display="block";
+    document.getElementById('keyboardObjects').style.display="none";
+    document.getElementById('keyboardWeather').style.display="none";
+    document.getElementById('keyboardFeelings').style.display="none";
+    document.getElementById('keyboardObjects2').style.display="none";
+}
+
+function emojisObj(){
+    document.getElementById('keyboardMinus').style.display = "none";
+    document.getElementById('keyboardMayus').style.display = "none";
+    document.getElementById('keyboardNum').style.display = "none";
+    document.getElementById('keyboardSymb').style.display = "none";
+    document.getElementById('keyboardGif').style.display = "none";
+    document.getElementById('keyboard2Gif').style.display = "none";
+    document.getElementById('gif2Keyboard').style.display = "block";
+    document.getElementById('keyboardPersonas').style.display="none";
+    document.getElementById('keyboardObjects').style.display="block";
+    document.getElementById('keyboardWeather').style.display="none";
+    document.getElementById('keyboardFeelings').style.display="none";
+    document.getElementById('keyboardObjects2').style.display="none";
+}
+
+function emojisWeather(){
+    document.getElementById('keyboardMinus').style.display = "none";
+    document.getElementById('keyboardMayus').style.display = "none";
+    document.getElementById('keyboardNum').style.display = "none";
+    document.getElementById('keyboardSymb').style.display = "none";
+    document.getElementById('keyboardGif').style.display = "none";
+    document.getElementById('keyboard2Gif').style.display = "none";
+    document.getElementById('gif2Keyboard').style.display = "block";
+    document.getElementById('keyboardPersonas').style.display="none";
+    document.getElementById('keyboardObjects').style.display="none";
+    document.getElementById('keyboardWeather').style.display="block";
+    document.getElementById('keyboardFeelings').style.display="none";
+    document.getElementById('keyboardObjects2').style.display="none";
+}
+function emojisObjects2(){
+    document.getElementById('keyboardMinus').style.display = "none";
+    document.getElementById('keyboardMayus').style.display = "none";
+    document.getElementById('keyboardNum').style.display = "none";
+    document.getElementById('keyboardSymb').style.display = "none";
+    document.getElementById('keyboardGif').style.display = "none";
+    document.getElementById('keyboard2Gif').style.display = "none";
+    document.getElementById('gif2Keyboard').style.display = "block";
+    document.getElementById('keyboardPersonas').style.display="none";
+    document.getElementById('keyboardObjects').style.display="none";
+    document.getElementById('keyboardWeather').style.display="none";
+    document.getElementById('keyboardFeelings').style.display="none";
+    document.getElementById('keyboardObjects2').style.display="block";
+}
+function emojisFeelings(){
+    document.getElementById('keyboardMinus').style.display = "none";
+    document.getElementById('keyboardMayus').style.display = "none";
+    document.getElementById('keyboardNum').style.display = "none";
+    document.getElementById('keyboardSymb').style.display = "none";
+    document.getElementById('keyboardGif').style.display = "none";
+    document.getElementById('keyboard2Gif').style.display = "none";
+    document.getElementById('gif2Keyboard').style.display = "block";
+    document.getElementById('keyboardPersonas').style.display="none";
+    document.getElementById('keyboardObjects').style.display="none";
+    document.getElementById('keyboardWeather').style.display="none";
+    document.getElementById('keyboardFeelings').style.display="block";
+    document.getElementById('keyboardObjects2').style.display="none";
 }
