@@ -83,7 +83,9 @@ button.forEach(but => {
             timer = setTimeout(() => {
                 estado = 1;
                 toUpperPerm();
-            }, 200)
+            }, 300)
+            console.log(estado);
+
         }
     })
 });
@@ -93,6 +95,7 @@ button.forEach(but => {
         clearTimeout(timer);
         estado = 2;
         toUpperPerm();
+        console.log(estado);
     })
 });
 
@@ -112,10 +115,12 @@ keyboard.forEach(letter => {
         // bajando cada vez que se escribe en una nueva linea
         typing.scrollTop = typing.scrollHeight;
         if (estado == 1) {
+            document.getElementsByClassName("minus")[0].textContent = "🡅";
             toLower();
         } else if (estado == 2) {
             toUpperPerm();
         }
+
     })
 });
 
@@ -175,7 +180,7 @@ function send() {
     //si el text area NO esta vacio, concateno todos los mensajes con el contenido del text area
     if (message != "") {
         document.getElementsByClassName("app-messagingArea")[0].innerHTML +=
-            `<div class="message"><p class="textContent">${message}</p><p class="time">${hour}</p></div>`;
+            `<div class="message"><p class="textContent">${message}</p><p class="time">${hour} <img src="images/tick.png" class="tick"></p></div>`;
     }
 
     //vacio el text area
@@ -186,6 +191,7 @@ function send() {
     myMsg.scrollTop = myMsg.scrollHeight;
     //una vez que enviamos el mensaje, ponemos el teclado en mayuscula
     toUpperPerm();
+    document.getElementsByClassName("minus")[0].textContent = "🡅";
     //y pasamos el estado a 1
     return estado = 1;
 }
@@ -225,6 +231,9 @@ function toUpperPerm() {
     document.getElementById('keyboardNum').style.display = "none";
     document.getElementById('keyboardSymb').style.display = "none";
     document.getElementById('keyboardGif').style.display = "none";
+    if (estado == 2){
+        document.getElementsByClassName("minus")[0].textContent = "⇪";
+    }
 }
 
 /**
