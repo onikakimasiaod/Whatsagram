@@ -7,7 +7,6 @@ pequeños cambios._
 ## Despliegue
 Aplicación desplegada en netlify.
 
-
 ## Construido con 
 - __HTML5:__ _usado para generar la página web._
 - __Javascript:__ _usado para generar las funciones de la aplicación._
@@ -29,3 +28,20 @@ ya que al hacer un append de un text node lo coge en formato texto y no código.
 
 Finalmente, encontré dificultades al generar el código css por falta de práctica de
 grid y flexbox. 
+
+## Mejoras en la aplicación
+He añadido unas mejoras a la aplicación:
+* He añadido diferentes tipos de teclados de emoticonos como en la aplicación 
+  de whatsapp.
+  
+* He añadido los teclados de símbolos y números.
+
+* He añadido un header con imagen y nombre.
+  
+* El botón mayúscula tiene diferentes estados css, como en la aplicación de whatsapp.
+Al estar en minúsculas, el botón muestra ⇧. Al dar un click, el botón tiene un fondo 
+  blanco y cambia de contenido: 🡅. Finalmente, al dar dos clicks tiene un fondo blanco
+  y cambia de contenido al: ⇪.
+  
+* Los emojis pueden añadirse a los mensajes.
+
