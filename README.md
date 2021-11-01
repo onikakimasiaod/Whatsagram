@@ -48,4 +48,6 @@ Al estar en minúsculas, el botón muestra ⇧. Al dar un click, el botón tiene
 * Una vez que envias un mensaje, el teclado se pone en mayuscula, al igual que en el Whatsapp.
 
 ## Otra información
-El doble click no funciona en móvil, solo en desktop.
+* El doble click no funciona en móvil, solo en desktop.
+* Se adapta a S5 y desktop, como dicen las instrucciones del documento.
+
